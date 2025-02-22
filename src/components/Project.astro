@@ -1,0 +1,50 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import CalendarIcon from '~/assets/icons/calendar.svg';
+import OfficeIcon from '~/assets/icons/office.svg';
+import UniversityIcon from '~/assets/icons/university.svg';
+import WorkIcon from '~/assets/icons/work.svg';
+
+interface Props {
+	title: string;
+	employeeImg?: ImageMetadata;
+	employeeElement?: boolean;
+	employerName: string;
+	period: string;
+	description: string;
+	isUniversity?: boolean;
+	skills?: string[];
+}
+const { title, employeeImg, employeeElement, employerName, period, description, isUniversity, skills } = Astro.props;
+---
+
+<div class='flex flex-col gap-4 text-sm md:flex-row'>
+	{
+		employeeElement ? (
+			employeeElement
+		) : employeeImg ? (
+			<Image src={employeeImg} alt='company logo' class='size-12 rounded-full' />
+
+		) : (
+		<OfficeIcon class='size-12 shrink-0 rounded-full bg-base-100 p-1' mode='sprite' />
+		)
+	}
+	<div class='w-full'>
+		<h3 class='font-medium'>{title}</h3>
+		<div class='mt-1.5 flex items-center gap-4'>
+			<div class='flex items-center gap-1.5 text-xs font-medium'>
+				{isUniversity ? <UniversityIcon class='size-4 shrink-0' /> : <WorkIcon class='size-4 shrink-0' mode='sprite' />}
+				{employerName}
+			</div>
+			<div class='flex items-center gap-1.5 text-xs font-medium'>
+					<CalendarIcon class='size-4 shrink-0 text-base-content' mode='sprite' />
+				{period}
+			</div>
+		</div>
+		<p class='mt-4 whitespace-pre-line text-sm text-info-content'>{description}</p>
+		<div class='mt-4 flex flex-wrap gap-1'>
+			{skills?.map((item) => <div class='rounded-1 bg-base-300 px-2 py-1 text-xs font-medium'>{item}</div>)}
+		</div>
+	</div>
+</div>
