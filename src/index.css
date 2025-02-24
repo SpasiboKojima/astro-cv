@@ -1,3 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+	name: 'light';
+	default: true;
+	--color-primary: oklch(57% 0.185 251.19);
+	--color-primary-content: #fff;
+	--color-neutral-content: #919eab;
+}
+@plugin "daisyui/theme" {
+	name: 'dark';
+	/* prefersdark: true; */
+	--color-primary: oklch(57% 0.185 251.19);
+	--color-base-100: rgb(0 0 0);
+	--color-base-200: #212529;
+	--color-base-content: rgb(237 237 237);
+	--color-info-content: rgb(161 161 161);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+	--font-geist: 'Geist';
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
+}
+
+@layer components {
+	.h1 {
+		@apply text-2xl font-semibold tracking-tight;
+	}
+	.h2 {
+		@apply text-lg font-semibold tracking-tight;
+	}
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+}
