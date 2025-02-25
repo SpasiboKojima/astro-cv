@@ -11,10 +11,10 @@ const getUrl = () => {
 	return `https://${process.env.VERCEL_URL}`;
 };
 
-const font = fetch(`${getUrl()}/assets/fonts/Geist/Geist-Regular.otf`).then((res) => res.arrayBuffer());
+// const font = fetch(`${getUrl()}/assets/fonts/Geist/Geist-Regular.otf`).then((res) => res.arrayBuffer());
 
 export async function GET() {
-	const fontData = await font;
+	// const fontData = await font;
 
 	return new ImageResponse(
 		{
@@ -81,14 +81,14 @@ export async function GET() {
 		{
 			width: 1200,
 			height: 630,
-			fonts: [
-				{
-					name: 'Geist',
-					data: fontData,
-					weight: 400,
-					style: 'normal',
-				},
-			],
+			// fonts: [
+			// 	{
+			// 		name: 'Geist',
+			// 		data: fontData,
+			// 		weight: 400,
+			// 		style: 'normal',
+			// 	},
+			// ],
 		}
 	);
 }
