@@ -7,15 +7,10 @@ import { ThemeToggle } from '~/components/Theme/Toggle';
 import ThemeIcon from '~/components/ThemeIcon.astro';
 import WorkExperience from '~/components/work/WorkExperience.astro';
 import Layout from '../layouts/Layout.astro';
-
-import '~/font.css';
-import '~/index.css';
 ---
 
 <Layout>
-	<main class='mx-auto bg-transparent p-4 font-[Geist] text-base-content'>
-		<ThemeIcon />
-		<ThemeToggle client:load/>
+	<main class="mx-auto bg-transparent p-4 font-geist text-base-content">
 		
 		<div class='m-auto max-w-xl lg:max-w-5xl'>
 			<div class='grid grid-cols-1 gap-4 lg:grid-cols-3'>
@@ -28,5 +23,4 @@ import '~/index.css';
 			</div>
 		</div>
 	</main>
-	<Footer />
 </Layout>

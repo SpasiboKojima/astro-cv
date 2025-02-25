@@ -1,6 +1,10 @@
 ---
 // import { SEO } from 'astro-seo';
 import { location } from '~/data';
+import '~/font.css';
+import '~/index.css';
+import Footer from '~/components/Footer.astro';
+import ThemeIcon from '~/components/ThemeIcon.astro';
 ---
 
 <!doctype html>
@@ -52,41 +56,25 @@ import { location } from '~/data';
 			}}
 		/> -->
 	</head>
-	<body class='relative min-h-screen'>
-		<div
-			class=''
-		>
-		<!-- <div
-			class='background after:glass after:block after:h-full after:w-full after:bg-none after:backdrop-blur-[150px] transition-all duration-300'
-		> -->
-		</div>
-		<div id='app'><slot /></div>
+	<body class='relative min-h-screen flex flex-col'>
+		<ThemeIcon />
+
+		<slot />
+
+		<Footer />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-	}
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 	}
 
-	.background {
-		background: radial-gradient(circle, rgba(166, 191, 255, 0.7) 0%, rgba(166, 191, 255, 0.5) 35%, #fff 100%);
-		position: fixed;
-		height: 100vh;
-		inset: 0;
-		z-index: -1;
-		overflow: hidden;
+	body {
+		background-image: radial-gradient(#cee1ff, #ffffff);
 	}
 
 	[data-theme='dark'] body {
-		.background {
-			background: radial-gradient(circle, rgba(166, 191, 255, 1) 0%, #000 100%);
-		}
+		background-image: radial-gradient(#021027, #000000);
 	}
 </style>

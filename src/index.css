@@ -12,8 +12,6 @@
 	name: 'dark';
 	/* prefersdark: true; */
 	--color-primary: oklch(57% 0.185 251.19);
-	--color-base-100: rgb(0 0 0);
-	--color-base-200: #212529;
 	--color-base-content: rgb(237 237 237);
 	--color-info-content: rgb(161 161 161);
 }
