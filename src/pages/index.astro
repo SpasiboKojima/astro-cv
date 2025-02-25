@@ -1,25 +1,103 @@
 ---
-import Footer from '~/components/Footer.astro';
-import Projects from '~/components/Projects.astro';
-import SectionNavigation from '~/components/SectionNavigation';
-import SidePanel from '~/components/SidePanel.astro';
-import { ThemeToggle } from '~/components/Theme/Toggle';
-import ThemeIcon from '~/components/ThemeIcon.astro';
-import WorkExperience from '~/components/work/WorkExperience.astro';
+import { Image } from 'astro:assets';
+import ArrowUpRight from '~/assets/icons/arrowUpRight.svg';
+import DownloadIcon from '~/assets/icons/download.svg';
+import EmailIcon from '~/assets/icons/email.svg';
+import GithubIcon from '~/assets/icons/github.svg';
+import LinkedinIcon from '~/assets/icons/linkedin.svg';
+import LocationIcon from '~/assets/icons/location.svg';
+import PhotoImg from '~/assets/images/photo.png';
+import { jobs, location, projects, shortDescription, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
 	<main class="mx-auto bg-transparent p-4 font-geist text-base-content">
-		
-		<div class='m-auto max-w-xl lg:max-w-5xl'>
-			<div class='grid grid-cols-1 gap-4 lg:grid-cols-3'>
-				<SidePanel />
+		<div class="m-auto max-w-prose">
+			<div class="flex gap-4 mb-6">
+				<Image src={PhotoImg} alt="face profile" class="size-24 rounded-sm object-cover" />
+				<div class="mt-1">
+					<h1 class="text-4xl font-medium">Andrew Katsewich</h1>
+					<div class="mt-1 flex justify-between text-sm text-neutral-content/80">
+						<div>Full Stack Developer</div>
+						<div class="flex items-center gap-1 justify-center">
+							<LocationIcon width={20} height={20} />
+							{location}
+						</div>
+					</div>
+				</div>
+			</div>
 
-				<SectionNavigation client:load >
-					<WorkExperience slot='work' transition:animate="fade" />
-					<Projects slot='projects'  transition:animate="fade" />
-				</SectionNavigation>
+			<div class="text-sm flex mb-14">
+				<div>
+					<p class="whitespace-pre-line text-pretty mb-4">{shortDescription}</p>
+					<div class="mb-4 flex flex-wrap gap-1">
+						{skillsPrimary.map((item) => <div class="rounded-1 bg-base-100 text-base-content px-2 py-1 text-xs font-medium">{item}</div>)}
+					</div>
+					<a href="./Andrew Katsewich's CV.pdf" target="_blank" referrerpolicy="no-referrer">
+						<button class="hover btn btn-primary">
+							<DownloadIcon width={20} height={20} />
+							Download CV</button
+						>
+					</a>
+				</div>
+				<div class="divider divider-horizontal"></div>
+				<div class="flex flex-col gap-4 justify-center">
+					<a href="https://www.linkedin.com/in/andrew-katsewich/" target="blank" class="link-hover link inline-flex items-center gap-2">
+						<LinkedinIcon class="size-6 text-base-content" />
+					</a>
+					<a href="mailto:andrew.katsewich@gmail.com" target="blank" class="link-hover link inline-flex items-center gap-2">
+						<EmailIcon class="size-6 text-base-content" />
+					</a>
+					<a href="https://github.com/SpasiboKojima" target="blank" class="link-hover link inline-flex items-center gap-2">
+						<GithubIcon class="size-6 text-base-content" />
+					</a>
+				</div>
+			</div>
+
+			<div class="mb-7 text-lg font-medium">Projects</div>
+			<div class="mb-14">
+				{
+					projects.map((project) => (
+						<a class="flex justify-between link link-hover py-1" href={`/p/${project.slug}`}>
+							<div>
+								{project.title}
+								<ArrowUpRight class="inline text-neutral-content/75 size-4 mb-1" />
+							</div>
+							<div>{project.period}</div>
+						</a>
+					))
+				}
+			</div>
+			<!-- <div class='mt-4 flex flex-wrap gap-1'>
+				{languages.map((item) => <div class='rounded-1 bg-base-300 px-2 py-1 text-xs font-medium'>{item}</div>)}
+			</div> -->
+			<!-- <div class='flex gap-4 mb-14'>
+				<a href='/project'>
+					<div class='w-[17.8rem] h-[26rem] bg-slate-500 p-4 flex flex-col'>
+						<p>INFINITY Webshop</p>
+						<Image src={ProjectImg} alt='face profile' class='h-40 w-full rounded object-cover mt-auto mx-auto' />
+					</div>
+				</a>
+
+				<a href='/project'>
+					<div class='w-[17.8rem] h-[26rem] bg-slate-500 p-4 flex flex-col'>
+						<p>INFINITY Webshop</p>
+						<Image src={ProjectImg} alt='face profile' class='h-40 w-full rounded object-cover mt-auto mx-auto' />
+					</div>
+				</a>
+			</div> -->
+
+			<div class="mb-7 text-lg font-medium">Work History</div>
+			<div>
+				{
+					jobs.map((job) => (
+						<div class="flex justify-between py-1">
+							{job.employerName}
+							<div>{job.period}</div>
+						</div>
+					))
+				}
 			</div>
 		</div>
 	</main>

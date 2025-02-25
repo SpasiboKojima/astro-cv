@@ -1,0 +1,45 @@
+---
+import { projects } from '~/data';
+import Layout from '../../layouts/Layout.astro';
+import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
+
+export function getStaticPaths() {
+	return projects.map((project) => ({
+		params: { project: project.slug },
+		props: { project },
+	}));
+}
+
+// const { project } = Astro.params;
+const {
+	project: { title, description, skills },
+} = Astro.props;
+---
+
+<Layout>
+	<main class='mx-auto bg-transparent p-4 font-geist text-base-content'>
+		<a href='/' class='group flex items-center mb-8'>
+			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
+		</a>
+		<div class='m-auto max-w-prose'>
+			<div class='flex gap-4 mb-6'>
+				<!-- <Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' /> -->
+				<div class='mt-1'>
+					<h1 class='text-4xl font-medium'>{title}</h1>
+					<div class='mt-1 flex justify-between text-sm text-neutral-content/80'>
+						<div>Full Stack Developer</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='text-sm flex mb-14'>
+				<div>
+					<p class='whitespace-pre-line text-pretty mb-4'>{description}</p>
+					<div class='mb-4 flex flex-wrap gap-1'>
+						{skills.map((item) => <div class='rounded-1 bg-base-100 text-base-content px-2 py-1 text-xs font-medium'>{item}</div>)}
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>

@@ -5,8 +5,7 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
-export const shortDescription = `I am a software engineer from ${location} with 6 years of commercial experience. I specialize in full-stack development
-using React, Typescript, Next.js, and Node.js. ${'\n'}I take responsibility for product development and think about end-users.`;
+export const shortDescription = `I am a software engineer from ${location} with 6 years of commercial experience. I specialize in full-stack development using React, Typescript, Next.js, and Node.js. ${'\n'}I take responsibility for product development and think about end-users.`;
 export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS', 'Wagmi', 'Ethers'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
@@ -64,8 +63,15 @@ export const jobs: Job[] = [
 	{
 		title: 'Frontend Web Developer',
 		employeeImg: CreativeITImg,
+		employerName: 'EPAM',
+		period: 'Jan 2025 - Present',
+		description: '',
+	},
+	{
+		title: 'Frontend Web Developer',
+		employeeImg: CreativeITImg,
 		employerName: 'CreativeIT',
-		period: 'Sep 2021 - Present',
+		period: 'Sep 2021 - Nov 2024',
 		description: `Used React and Next.js on a total of 7 projects.
 - Small Next.js + Tailwind project with integration of 3rd party API;
 - Created MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
@@ -160,5 +166,90 @@ export const courses: Course[] = [
 		title: "Udemy - Ethereum and Solidity: The Complete Developer's Guide",
 		url: 'https://www.udemy.com/certificate/UC-WJRO97KJ/',
 		icon: 'courses/ethereum',
+	},
+];
+
+interface Project {
+	title: string;
+	employerName: string;
+	period: string;
+	description: string;
+	skills: string[];
+	slug: string;
+}
+
+export const projects: Project[] = [
+	{
+		title: 'INFINITY Webshop',
+		employerName: 'CreativeIT',
+		period: 'Nov 2023 - Jun 2024',
+		description: `My accomplishments:
+					- Implemented fully fledged Auth flow with credentials and custom backend using NextAuth
+					- Implemented internationalization in Next.js middleware using next-intl
+					- Implemented smoothly animated, responsive, and accessible interface efficiently optimized and near pixel-perfect to designs using Tailwind CSS, DaisyUI and framer-motion
+					- Created a purchase page with server-side data fetching, validations, progress synchronization, and lots of customization options for vendors.`,
+		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand'],
+		slug: 'infinity',
+	},
+	{
+		title: '3D Animation Marketplace',
+		employerName: 'CreativeIT',
+		period: 'Aug 2023 - Nov 2023',
+		description: `Created animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls)
+				Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
+		skills: ['Next.js', 'React', 'Three.js (@react-three/fiber, @react-three/drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
+		slug: 'marketplace',
+	},
+	{
+		title: 'Starly',
+		employerName: 'CreativeIT',
+		period: 'Dec 2021 - May 2023',
+		description: `NFT marketplace with various collect-to-earn mechanics. Built on React, Redux, Styled-components, Firebase, Flow blockchain, and Ethers.
+				My accomplishments:
+				- Optimized, refactored, and improved an already existing code base of a middle-sized project, which greatly improved performance, UX and code quality (-40% bundle size, resolved hundreds of eslint and typescript errors, and fixed dozens of old bugs);
+				- Implemented NFT and Starly token staking functionalities, bidding, vesting, and Binance smart chain payment integration;
+				- Implemented UI for the new pages near pixel-perfect to designs and ensured its UX and responsibility with the help of the QA team.
+				
+				Client’s feedback on my work: https://clutch.co/go-to-review/be30a22b-bf5a-4b72-be7b-9232c314eaa3/190900`,
+		skills: [
+			'React',
+			'Redux (with Saga and Toolkit)',
+			'Styled-components',
+			'Storybook',
+			'Typescript',
+			'react-hook-forms',
+			'Firebase',
+			'Flow blockchain',
+			'Ethers',
+		],
+		slug: 'starly',
+	},
+	// {/* https://boredlucky.vercel.app/ */}
+	{
+		title: 'Bored & Lucky',
+		employerName: 'CreativeIT',
+		period: 'Jul 2022 - Dec 2022',
+		description: `‘Bored & Lucky’ is and Ethereum smart-contract based NFT raffle platform. Built on Next.js, Typescript, Redux Thunk, Styled-components, Redis, Wagmi.
+				My responsibilities and accomplishments were all front-end parts except for project setup and initial raffle layout, i.e.:
+				- Implemented UI near pixel-perfect to designs and ensured its UX and responsiveness with the help of the QA team;
+				- Implemented Web3 related logic of displaying time-based raffles and interacting with them with Web3 wallets;
+				- Created a small custom global store solution using React Context and Redux Thunk with persistence.`,
+		skills: ['Next.js', 'Typescript', 'Redux Thunk', 'Styled-components', 'Redis', 'Wagmi'],
+		slug: 'bored&lucky',
+	},
+	{
+		title: 'Totle Swap',
+		employerName: 'Totle',
+		period: 'May 2019 - Mar 2020',
+		description: `Decentralized exchanges aggregator that lets you swap tokens at best prices available.,
+
+My accomplishments:
+- Setup a new lightweight front-end app with React + Redux that handled API calls and Web3 wallets interactions;
+- Integrated our back-end service with various wallets (i.e. MyEtherWallet);
+- Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);
+
+Was integrated later as one of the routes for Metamask.`,
+		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid'],
+		slug: 'totle',
 	},
 ];

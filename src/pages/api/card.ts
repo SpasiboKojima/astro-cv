@@ -27,8 +27,8 @@ export async function GET() {
 					fontSize: 32,
 					fontWeight: 600,
 					backgroundImage:
-					"radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)",
-					backgroundSize: "100px 100px",
+						'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
+					backgroundSize: '100px 100px',
 				},
 				tw: 'flex h-full w-full flex-col items-center justify-center bg-gray-50 p-16 text-center text-gray-900',
 				children: [
@@ -89,6 +89,6 @@ export async function GET() {
 					style: 'normal',
 				},
 			],
-		},
+		}
 	);
 }
