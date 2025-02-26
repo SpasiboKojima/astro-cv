@@ -1,8 +1,5 @@
 import { ImageResponse } from '@vercel/og';
-import { location } from '~/data';
-import companyLogo from '~/assets/images/employers/creativeit.jpeg';
-
-export const runtime = 'edge';
+import { jobs, location } from '~/data';
 
 const getUrl = () => {
 	if (process.env.NODE_ENV === 'development') {
@@ -11,11 +8,15 @@ const getUrl = () => {
 	return `https://${process.env.VERCEL_URL}`;
 };
 
-const font = fetch(`${getUrl()}/assets/fonts/Geist/Geist-Regular.otf`).then((res) => res.arrayBuffer());
+const font = fetch(`${getUrl()}/assets/fonts/Geist/Geist-Regular.otf`);
 
 export async function GET() {
-	console.log('getUrl() :>> ', getUrl());
-	const fontData = await font;
+	let fontData: ArrayBuffer | null = null;
+	try {
+		fontData = await (await font).arrayBuffer();
+	} catch(err) {
+		console.log('err :>> ', err);
+	}
 
 	return new ImageResponse(
 		{
@@ -36,10 +37,10 @@ export async function GET() {
 					{
 						type: 'img',
 						props: {
-							src: `${getUrl()}/assets/creativeit.jpeg`,
-							width: companyLogo.width,
-							height: companyLogo.height,
-							tw: 'w-24 h-24 mt-auto',
+							src: `${getUrl()}/assets/epam.png`,
+							width: jobs[0].employeeImg?.width,
+							height: jobs[0].employeeImg?.height,
+							tw: 'mt-auto',
 						},
 					},
 					{
@@ -64,7 +65,7 @@ export async function GET() {
 								{
 									type: 'div',
 									props: {
-										children: 'CreativeIT',
+										children: jobs[0].employerName,
 									},
 								},
 								{
@@ -82,14 +83,16 @@ export async function GET() {
 		{
 			width: 1200,
 			height: 630,
-			fonts: [
-				{
-					name: 'Geist',
-					data: fontData,
-					weight: 400,
-					style: 'normal',
-				},
-			],
+			// fonts: fontData
+			// 	? [
+			// 			{
+			// 				name: 'Geist',
+			// 				data: fontData,
+			// 				weight: 400,
+			// 				style: 'normal',
+			// 			},
+			// 		]
+			// 	: [],
 		}
 	);
 }

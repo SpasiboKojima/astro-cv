@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import CreativeITImg from '~/assets/images/employers/creativeit.jpeg';
+import EPAMImg from '~/assets/images/employers/epam.png';
 import TargsoftImg from '~/assets/images/employers/targsoft.jpeg';
 import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
@@ -62,7 +63,7 @@ export interface Job {
 export const jobs: Job[] = [
 	{
 		title: 'Frontend Web Developer',
-		employeeImg: CreativeITImg,
+		employeeImg: EPAMImg,
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Present',
 		description: '',
