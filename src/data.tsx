@@ -6,7 +6,11 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
-export const shortDescription = `I am a software engineer from ${location} with 6 years of commercial experience. I specialize in full-stack development using React, Typescript, Next.js, and Node.js. ${'\n'}I take responsibility for product development and think about end-users.`;
+export const shortDescription = `I am a software engineer with 6 years of commercial experience. In development I choose lightweight and performant solutions and methods that will be extensible for future iterations. I have also adopted AI, I use the Codeium extension for both code completion and chat, it really comes in handy for some tasks.
+
+When it comes to my work, I'm used to working in teams as well as starting and maintaining projects on my own. My experience covers various types of projects and I accumulated a lot of relevant solutions to different frontend needs. I don't mind digging someone else's code and enjoy refactoring and optimizing if there's a chance.
+
+I take responsibility for product development and think about end-user.`;
 export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS', 'Wagmi', 'Ethers'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
@@ -57,6 +61,7 @@ export interface Job {
 	employerName: string;
 	period: string;
 	description: string;
+	shortDescription?: string;
 	isUniversity?: boolean;
 }
 
@@ -66,7 +71,8 @@ export const jobs: Job[] = [
 		employeeImg: EPAMImg,
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Present',
-		description: '',
+		description: 'Working on migrating a set of websites for big enterprise client to Next.js.',
+		shortDescription: 'Working on migrating a set of websites for big enterprise client to Next.js.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -84,6 +90,7 @@ export const jobs: Job[] = [
 Also:
 - Participated in mentoring to speed up the unboarding process of less experienced developer;
 - Participated in conducting technical interviews.`,
+		shortDescription: 'Created in total 7 projects with React and Next.js. Participated in mentoring and conducting technical interviews.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -93,6 +100,8 @@ Also:
 		description: ` - Created 2 Canva editing extensions (Javascript);
 - Worked on refactoring and optimizing a React frontend for a small startup;
 - Worked on TargControl time tracking platform (Angular 11 & Typescript).`,
+		shortDescription:
+			'Created 2 Canva editing extensions. Worked on refactoring and optimizing a React frontend. Worked on TargControl time tracking platform.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -107,6 +116,8 @@ My accomplishments:
 - Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);
 
 Was integrated later as one of the routes for Metamask.`,
+		shortDescription:
+			'Created a new lightweight front-end app with React + Redux. Integrated our back-end service with various wallets. Created backoffice-related services.',
 	},
 	{
 		title: 'Ethereum Developer',
@@ -114,6 +125,8 @@ Was integrated later as one of the routes for Metamask.`,
 		employerName: 'WEB Secret',
 		period: 'Oct 2018 - Nov 2018',
 		description:
+			'Built a POC DAO DApps on Ethereum (smart-contracts), React.js + web3.js and added test coverage on JavaScript with Mocha + Chai.',
+		shortDescription:
 			'Built a POC DAO DApps on Ethereum (smart-contracts), React.js + web3.js and added test coverage on JavaScript with Mocha + Chai.',
 	},
 	{
@@ -123,6 +136,8 @@ Was integrated later as one of the routes for Metamask.`,
 		description: `Used Ethereum stack technologies (Solidity, Truffle, web3.js, Geth, OpenZeppelin) as well as API building and communitating with Ethereum on both backend and frontend sides (Go, Node.js, React.js), conducted R&D about implementing new solutions to our needs (Loom, zk-SNARKs).
 - Created a set of smart-contracts for 2 internal projects,  which included working with security tokens (ERC1404) and expanding ideas of STO to our needs. Integrated smart-contracts interactions with Web3.js to AngularJs Front-end.
 - Created a prototype of prediction market platform based on Gnosis. The dApp would allow users to make predictions and back them up by tokens. From my side was issued a research on topic of Futarchy, prediction markets, project Gnosis and its competitors, and created a basic version of front-end interacting with IPFS and Gnosis’s smart-contracts.`,
+		shortDescription:
+			'Created smart-contracts for 2 internal projects. Created multiple POC prototype apps. Integrated communications with Ethereum on both backend and frontend sides.',
 	},
 ];
 

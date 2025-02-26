@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
 				<Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' />
 				<div class='mt-1'>
 					<h1 class='text-4xl font-medium'>Andrew Katsewich</h1>
-					<div class='text-neutral-content/80 mt-1 flex justify-between text-sm'>
+					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-500'>
 						<div>Full Stack Developer</div>
 						<div class='flex items-center justify-center gap-1'>
 							<LocationIcon width={20} height={20} />
@@ -41,7 +41,7 @@ import Layout from '../layouts/Layout.astro';
 						>
 					</a>
 				</div>
-				<div class='divider divider-horizontal'></div>
+				<div class='divider divider-horizontal !h-40 self-center'></div>
 				<div class='flex flex-col justify-center gap-4'>
 					<a href='https://www.linkedin.com/in/andrew-katsewich/' target='blank' class='link-hover link inline-flex items-center gap-2'>
 						<LinkedinIcon class='text-base-content size-6' />
@@ -55,14 +55,14 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<div class='mb-7 text-lg font-medium'>Projects</div>
+			<div class='mb-7 text-xl font-medium'>Projects</div>
 			<div class='mb-14'>
 				{
 					projects.map((project) => (
-						<a class='link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
-							<div>
+						<a class='group link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
+							<div class="max-w-1/2">
 								{project.title}
-								<ArrowUpRight class='text-neutral-content/75 mb-1 inline size-4' />
+								<ArrowUpRight class='text-neutral-content/75 -mb-1 inline size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 							</div>
 							<div>{project.period}</div>
 						</a>
@@ -88,13 +88,17 @@ import Layout from '../layouts/Layout.astro';
 				</a>
 			</div> -->
 
-			<div class='mb-7 text-lg font-medium'>Work History</div>
-			<div>
+			<div class='mb-7 text-xl font-medium'>Work History</div>
+			<div class='flex flex-col gap-2'>
 				{
 					jobs.map((job) => (
-						<div class='flex justify-between py-1'>
-							{job.employerName}
-							<div>{job.period}</div>
+						// index === 0 ? 'text-lg font-medium' : 'text-neutral-content/80'
+						<div>
+							<div class={`flex justify-between py-1`}>
+								{job.employerName}
+								<div>{job.period}</div>
+							</div>
+							<div class='dark:text-neutral-content/80 text-sm text-gray-500'>{job.shortDescription}</div>
 						</div>
 					))
 				}

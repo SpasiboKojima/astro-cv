@@ -6,7 +6,6 @@
 	default: true;
 	--color-primary: oklch(57% 0.185 251.19);
 	--color-primary-content: #fff;
-	--color-neutral-content: #919eab;
 }
 @plugin "daisyui/theme" {
 	name: 'dark';
