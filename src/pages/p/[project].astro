@@ -17,26 +17,26 @@ const {
 ---
 
 <Layout>
-	<main class='mx-auto bg-transparent p-4 font-geist text-base-content'>
-		<a href='/' class='group flex items-center mb-8'>
+	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
+		<a href='/' class='group mb-8 flex items-center'>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
 		</a>
 		<div class='m-auto max-w-prose'>
-			<div class='flex gap-4 mb-6'>
+			<div class='mb-6 flex gap-4'>
 				<!-- <Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' /> -->
 				<div class='mt-1'>
 					<h1 class='text-4xl font-medium'>{title}</h1>
-					<div class='mt-1 flex justify-between text-sm text-neutral-content/80'>
+					<div class='text-neutral-content/80 mt-1 flex justify-between text-sm'>
 						<div>Full Stack Developer</div>
 					</div>
 				</div>
 			</div>
 
-			<div class='text-sm flex mb-14'>
+			<div class='mb-14 flex text-sm'>
 				<div>
-					<p class='whitespace-pre-line text-pretty mb-4'>{description}</p>
+					<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
 					<div class='mb-4 flex flex-wrap gap-1'>
-						{skills.map((item) => <div class='rounded-1 bg-base-100 text-base-content px-2 py-1 text-xs font-medium'>{item}</div>)}
+						{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 					</div>
 				</div>
 			</div>
