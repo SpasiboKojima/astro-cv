@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
 	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
 		<div class='m-auto max-w-prose'>
 			<div class='mb-6 flex gap-4'>
-				<Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' />
+				<Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' width={96} height={96} loading='eager' />
 				<div class='mt-1'>
 					<h1 class='text-4xl font-medium'>Andrew Katsewich</h1>
 					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-500'>
@@ -28,31 +28,46 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 
-			<div class='mb-14 flex text-sm'>
-				<div>
+			<div class='mb-14 text-sm'>
+				<div class='flex'>
 					<p class='mb-4 text-pretty whitespace-pre-line'>{shortDescription}</p>
-					<div class='mb-4 flex flex-wrap gap-1'>
-						{skillsPrimary.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
-					</div>
-					<a href="./Andrew Katsewich's CV.pdf" target='_blank' referrerpolicy='no-referrer'>
-						<button class='hover btn btn-primary'>
-							<DownloadIcon width={20} height={20} />
-							Download CV</button
+					<div class='divider divider-horizontal !h-40 self-center'></div>
+					<div class='flex flex-col justify-center gap-4'>
+						<a
+							aria-label='LinkedIn page'
+							href='https://www.linkedin.com/in/andrew-katsewich/'
+							target='blank'
+							class='link-hover link inline-flex items-center gap-2'
 						>
-					</a>
+							<LinkedinIcon class='text-base-content size-6' />
+						</a>
+						<a
+							aria-label='Email address'
+							href='mailto:andrew.katsewich@gmail.com'
+							target='blank'
+							class='link-hover link inline-flex items-center gap-2'
+						>
+							<EmailIcon class='text-base-content size-6' />
+						</a>
+						<a
+							aria-label='Github profile'
+							href='https://github.com/SpasiboKojima'
+							target='blank'
+							class='link-hover link inline-flex items-center gap-2'
+						>
+							<GithubIcon class='text-base-content size-6' />
+						</a>
+					</div>
 				</div>
-				<div class='divider divider-horizontal !h-40 self-center'></div>
-				<div class='flex flex-col justify-center gap-4'>
-					<a href='https://www.linkedin.com/in/andrew-katsewich/' target='blank' class='link-hover link inline-flex items-center gap-2'>
-						<LinkedinIcon class='text-base-content size-6' />
-					</a>
-					<a href='mailto:andrew.katsewich@gmail.com' target='blank' class='link-hover link inline-flex items-center gap-2'>
-						<EmailIcon class='text-base-content size-6' />
-					</a>
-					<a href='https://github.com/SpasiboKojima' target='blank' class='link-hover link inline-flex items-center gap-2'>
-						<GithubIcon class='text-base-content size-6' />
-					</a>
+				<div class='mb-4 flex flex-wrap gap-1'>
+					{skillsPrimary.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 				</div>
+				<a href="./Andrew Katsewich's CV.pdf" target='_blank' referrerpolicy='no-referrer'>
+					<button class='hover btn btn-primary'>
+						<DownloadIcon width={20} height={20} />
+						Download CV</button
+					>
+				</a>
 			</div>
 
 			<div class='mb-7 text-xl font-medium'>Projects</div>
@@ -60,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
 				{
 					projects.map((project) => (
 						<a class='group link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
-							<div class="max-w-1/2">
+							<div class='max-w-1/2'>
 								{project.title}
 								<ArrowUpRight class='text-neutral-content/75 -mb-1 inline size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 							</div>
