@@ -7,7 +7,7 @@ import GithubIcon from '~/assets/icons/github.svg';
 import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
 import PhotoImg from '~/assets/images/photo.png';
-import { jobs, location, projects, shortDescription, skillsPrimary } from '~/data';
+import { articles, jobs, location, projects, shortDescription, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -33,28 +33,13 @@ import Layout from '../layouts/Layout.astro';
 					<p class='mb-4 text-pretty whitespace-pre-line'>{shortDescription}</p>
 					<div class='divider divider-horizontal !h-40 self-center'></div>
 					<div class='flex flex-col justify-center gap-4'>
-						<a
-							aria-label='LinkedIn page'
-							href='https://www.linkedin.com/in/andrew-katsewich/'
-							target='blank'
-							class='link-hover link inline-flex items-center gap-2'
-						>
+						<a aria-label='LinkedIn page' href='https://www.linkedin.com/in/andrew-katsewich/' target='blank'>
 							<LinkedinIcon class='text-base-content size-6' />
 						</a>
-						<a
-							aria-label='Email address'
-							href='mailto:andrew.katsewich@gmail.com'
-							target='blank'
-							class='link-hover link inline-flex items-center gap-2'
-						>
+						<a aria-label='Email address' href='mailto:andrew.katsewich@gmail.com' target='blank'>
 							<EmailIcon class='text-base-content size-6' />
 						</a>
-						<a
-							aria-label='Github profile'
-							href='https://github.com/SpasiboKojima'
-							target='blank'
-							class='link-hover link inline-flex items-center gap-2'
-						>
+						<a aria-label='Github profile' href='https://github.com/SpasiboKojima' target='blank'>
 							<GithubIcon class='text-base-content size-6' />
 						</a>
 					</div>
@@ -104,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
 			</div> -->
 
 			<div class='mb-7 text-xl font-medium'>Work History</div>
-			<div class='flex flex-col gap-2'>
+			<div class='mb-14 flex flex-col gap-2'>
 				{
 					jobs.map((job) => (
 						// index === 0 ? 'text-lg font-medium' : 'text-neutral-content/80'
@@ -115,6 +100,18 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 							<div class='dark:text-neutral-content/80 text-sm text-gray-500'>{job.shortDescription}</div>
 						</div>
+					))
+				}
+			</div>
+
+			<div class='mb-7 text-xl font-medium'>Articles</div>
+			<div class='flex flex-col gap-2'>
+				{
+					articles.map((project) => (
+						<a class='group link link-hover py-1' href={project.slug}>
+							{project.title}
+							<ArrowUpRight class='text-neutral-content/75 -mb-1 inline size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+						</a>
 					))
 				}
 			</div>

@@ -71,7 +71,7 @@ export const jobs: Job[] = [
 		employeeImg: EPAMImg,
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Present',
-		description: 'Working on migrating a set of websites for big enterprise client to Next.js.',
+		description: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
 		shortDescription: 'Working on migrating a set of websites for big enterprise client to Next.js.',
 	},
 	{
@@ -267,5 +267,21 @@ My accomplishments:
 Was integrated later as one of the routes for Metamask.`,
 		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid'],
 		slug: 'totle',
+	},
+];
+
+interface Article {
+	title: string;
+	slug: string;
+}
+
+export const articles: Article[] = [
+	{
+		title: 'Anticipating User Errors in Web',
+		slug: 'https://dev.to/thanksboss/anticipating-user-errors-in-web-3nbc',
+	},
+	{
+		title: 'Fixing Target Size or A Fat Finger Problem',
+		slug: 'https://dev.to/thanksboss/fixing-target-area-or-a-fat-finger-problem-1fe8',
 	},
 ];
