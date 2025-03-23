@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import ThemeIcon from '~/components/ThemeIcon.astro';
 import { jobs, location } from '~/data';
@@ -9,6 +10,7 @@ import '~/index.css';
 <!doctype html>
 <html lang='en'>
 	<head>
+		<ClientRouter />
 		<title>Andrew Katsewich's CV</title>
 		<meta property='title' content="Andrew Katsewich's CV" />
 		<meta name='description' content={`Andrew Katsewich, Full Stack Developer in ${location}, @${jobs[0].employerName}`} />
@@ -43,6 +45,7 @@ import '~/index.css';
 </html>
 <style is:global>
 	html {
+		scrollbar-gutter: stable;
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 	}
