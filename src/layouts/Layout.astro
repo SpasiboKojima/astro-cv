@@ -33,7 +33,7 @@ import '~/index.css';
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='generator' content={Astro.generator} />
 
-		<meta name='theme-color' content='#a6bfff4c' />
+		<meta name='theme-color' content='oklch(20% 0.105 251.19 / 0.5)' />
 	</head>
 	<body class='relative flex min-h-screen flex-col'>
 		<ThemeIcon />
@@ -47,14 +47,18 @@ import '~/index.css';
 	html {
 		scrollbar-gutter: stable;
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background-color: #fff;
+	}
+
+	html[data-theme='dark'] {
+		background: #000;
 	}
 
 	body {
-		background-image: radial-gradient(#cee1ff, #ffffff);
+		background-image: radial-gradient(#cee1ff, #ffffff 70%);
 	}
 
 	[data-theme='dark'] body {
-		background-image: radial-gradient(#021027, #000000);
+		background-image: radial-gradient(#021027, #000000 90%);
 	}
 </style>
