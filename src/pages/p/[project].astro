@@ -17,7 +17,7 @@ const { project: slug } = Astro.params;
 const {
 	project: { title, description, skills },
 } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif}');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
 
 const projectImages = Object.keys(images)
 	.filter((imagePath) => imagePath.includes(slug))
