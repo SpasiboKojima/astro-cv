@@ -13,14 +13,14 @@ export function getStaticPaths() {
 	}));
 }
 
-const { project } = Astro.params;
+const { project: slug } = Astro.params;
 const {
 	project: { title, description, skills },
 } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif}');
 
 const projectImages = Object.keys(images)
-	.filter((imagePath) => imagePath.includes(project))
+	.filter((imagePath) => imagePath.includes(slug))
 	.map((imagePath) => images[imagePath]);
 
 const imageOpts = await generateImages(projectImages);

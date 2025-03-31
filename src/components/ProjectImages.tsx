@@ -1,9 +1,6 @@
 import { createSignal, For, onMount, Show, type JSX, type JSXElement } from 'solid-js';
 import type { ImageOpts } from '~/lib/image';
 
-function isImageMetadata(src: string | ImageMetadata): src is ImageMetadata {
-	return (src as ImageMetadata).src !== undefined;
-}
 
 interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
 	options: ImageOpts;
@@ -12,13 +9,16 @@ interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
 const Picture = (props: PictureProps) => {
 	const options = () => props.options;
 
-	const src = options().rawOptions.src;
+	const getSrc = () => {
+		const src = options().rawOptions.src;
+		return typeof src === 'string' ? src : src.src;
+	};
 	return (
 		<picture>
 			<For each={options().options} fallback={null}>
 				{(item, index) => <source sizes={props.sizes} srcset={options().srcSet[index()].attribute} type={`image/${item.format}`} />}
 			</For>
-			<img {...props} alt={props.alt} src={isImageMetadata(src) ? src.src : src} />
+			<img {...props} alt={props.alt} src={getSrc()} />
 		</picture>
 	);
 };
@@ -30,31 +30,31 @@ interface ProjectImagesProps {
 
 export default function ProjectImages(props: ProjectImagesProps) {
 	let modalRef: HTMLDialogElement | undefined;
-	const [selectedIndex, setSelectedImage] = createSignal<number | null>(null);
+	const [selectedIndex, setSelectedIndex] = createSignal<number | null>(null);
 
 	const selectedImage = () => props.images[selectedIndex() || 0];
 
 	onMount(() => {
-		window.addEventListener('keydown', close);
+		window.addEventListener('keydown', changeImage);
 	});
 
-	function close(e: KeyboardEvent) {
+	function changeImage(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight') {
 			const index = selectedIndex();
 			if (modalRef?.open && index !== null && index < props.images.length - 1) {
-				setSelectedImage(index + 1);
+				setSelectedIndex(index + 1);
 			}
 		}
 		if (e.key === 'ArrowLeft') {
 			const index = selectedIndex();
 			if (modalRef?.open && index !== null && index > 0) {
-				setSelectedImage(index - 1);
+				setSelectedIndex(index - 1);
 			}
 		}
 	}
 
 	const selectImage = (index: number) => {
-		setSelectedImage(index);
+		setSelectedIndex(index);
 		modalRef?.showModal();
 	};
 
@@ -92,14 +92,14 @@ export default function ProjectImages(props: ProjectImagesProps) {
 										values: [],
 									})),
 								}}
-								sizes="auto"
 								alt="Project's UI mockup"
 								class="size-full max-h-screen object-contain"
+								onClick={() => modalRef?.close()}
 							/>
 						)}
 					</Show>
 				</div>
-				<form method="dialog" class="modal-backdrop z-0">
+				<form method="dialog" class="modal-backdrop">
 					<button>close</button>
 				</form>
 			</dialog>
