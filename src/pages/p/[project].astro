@@ -1,7 +1,10 @@
 ---
+import type { ImageMetadata } from 'astro';
+import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
+import ProjectImages from '~/components/ProjectImages';
 import { projects } from '~/data';
 import Layout from '../../layouts/Layout.astro';
-import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
+import { generateImages } from '~/lib/image';
 
 export function getStaticPaths() {
 	return projects.map((project) => ({
@@ -10,15 +13,22 @@ export function getStaticPaths() {
 	}));
 }
 
-// const { project } = Astro.params;
+const { project: slug } = Astro.params;
 const {
 	project: { title, description, skills },
 } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
+
+const projectImages = Object.keys(images)
+	.filter((imagePath) => imagePath.includes(slug))
+	.map((imagePath) => images[imagePath]);
+
+const imageOpts = await generateImages(projectImages);
 ---
 
 <Layout>
 	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
-		<a href='/' class='group mb-8 flex items-center'>
+		<a href='/' class='group mb-8 flex items-center' aria-label='Back to Home page'>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
 		</a>
 		<div class='m-auto max-w-prose'>
@@ -39,6 +49,10 @@ const {
 						{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 					</div>
 				</div>
+			</div>
+
+			<div class='mb-14'>
+				<ProjectImages client:load images={imageOpts} />
 			</div>
 		</div>
 	</main>
