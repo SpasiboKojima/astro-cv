@@ -28,11 +28,19 @@ const imageOpts = await generateImages(projectImages);
 
 <Layout>
 	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
-		<a href='/' class='group mb-8 flex items-center' aria-label='Back to Home page'>
+		<a href='/' class='group mb-8 hidden items-center lg:flex' aria-label='Back to Home page'>
+			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
+		</a>
+
+		<a
+			href='/'
+			class='group btn btn-circle border-base-content fixed bottom-8 left-8 z-20 flex size-auto items-center border p-4 lg:hidden'
+			aria-label='Back to Home page'
+		>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
 		</a>
 		<div class='m-auto max-w-prose'>
-			<div class='mb-6 flex gap-4'>
+			<div class='mb-6 flex gap-4 pr-14'>
 				<!-- <Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' /> -->
 				<div class='mt-1'>
 					<h1 class='text-4xl font-medium'>{title}</h1>
