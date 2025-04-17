@@ -36,6 +36,7 @@ import '~/index.css';
 		<meta name='theme-color' content='oklch(20% 0.105 251.19 / 0.5)' />
 	</head>
 	<body class='relative flex min-h-screen flex-col'>
+		<div class='background'></div>
 		<ThemeIcon />
 
 		<slot />
@@ -54,11 +55,18 @@ import '~/index.css';
 		background: #000;
 	}
 
-	body {
-		background-image: radial-gradient(#cee1ff, #ffffff 70%);
+	.background {
+		position: fixed;
+		inset: 0px;
+		z-index: -1;
+		background-image: radial-gradient(#cee1ff, #ffffff 75%);
+
+		background-size: max(100vw, 100vh) max(100vw, 100vh);
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
-	[data-theme='dark'] body {
+	[data-theme='dark'] .background {
 		background-image: radial-gradient(#021027, #000000 90%);
 	}
 </style>
