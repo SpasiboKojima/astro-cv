@@ -42,12 +42,10 @@ const imageOpts = await generateImages(projectImages);
 				</div>
 			</div>
 
-			<div class='mb-14 flex text-sm'>
-				<div>
-					<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
-					<div class='mb-4 flex flex-wrap gap-1'>
-						{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
-					</div>
+			<div class='mb-14'>
+				<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
+				<div class='mb-4 flex flex-wrap gap-1'>
+					{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 				</div>
 			</div>
 
