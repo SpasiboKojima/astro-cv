@@ -33,13 +33,28 @@ import Layout from '../layouts/Layout.astro';
 					<p class='mb-4 text-pretty whitespace-pre-line'>{shortDescription}</p>
 					<div class='divider divider-horizontal !h-40 self-center'></div>
 					<div class='flex flex-col justify-center gap-4'>
-						<a aria-label='LinkedIn page' href='https://www.linkedin.com/in/andrew-katsewich/' target='blank'>
+						<a
+							class='-m-2 p-2 transition-transform hover:scale-125'
+							aria-label='LinkedIn page'
+							href='https://www.linkedin.com/in/andrew-katsewich/'
+							target='blank'
+						>
 							<LinkedinIcon class='text-base-content size-6' />
 						</a>
-						<a aria-label='Email address' href='mailto:andrew.katsewich@gmail.com' target='blank'>
+						<a
+							class='-m-2 p-2 transition-transform hover:scale-125'
+							aria-label='Email address'
+							href='mailto:andrew.katsewich@gmail.com'
+							target='blank'
+						>
 							<EmailIcon class='text-base-content size-6' />
 						</a>
-						<a aria-label='Github profile' href='https://github.com/SpasiboKojima' target='blank'>
+						<a
+							class='-m-2 p-2 transition-transform hover:scale-125'
+							aria-label='Github profile'
+							href='https://github.com/SpasiboKojima'
+							target='blank'
+						>
 							<GithubIcon class='text-base-content size-6' />
 						</a>
 					</div>
@@ -50,8 +65,8 @@ import Layout from '../layouts/Layout.astro';
 				<a href="./Andrew Katsewich's CV.pdf" target='_blank' referrerpolicy='no-referrer'>
 					<button class='hover btn btn-primary'>
 						<DownloadIcon width={20} height={20} />
-						Download CV</button
-					>
+						Download CV
+					</button>
 				</a>
 			</div>
 
