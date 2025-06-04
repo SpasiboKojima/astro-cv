@@ -39,7 +39,12 @@ import Layout from '../layouts/Layout.astro';
 									<td>{project.period.split(' ')[1]}</td>
 									<td class='text-base font-medium'>
 										{project.url ? (
-											<a href={project.url} class='link link-hover group flex justify-between py-1'>
+											<a
+												href={project.url}
+												target='_blank'
+												rel='noopener noreferrer'
+												class='link link-hover group flex justify-between py-1'
+											>
 												{project.title}
 												<ArrowUpRight class='size-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 											</a>
