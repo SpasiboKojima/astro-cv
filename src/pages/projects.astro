@@ -1,0 +1,71 @@
+---
+import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
+import ArrowUpRight from '~/assets/icons/arrowUpRight.svg';
+import { projects } from '~/data';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
+		<a href='/' class='group mb-8 hidden items-center lg:flex' aria-label='Back to Home page'>
+			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
+		</a>
+
+		<a
+			href='/'
+			class='group btn btn-circle border-base-content fixed bottom-8 left-8 z-20 flex size-auto items-center border p-4 lg:hidden'
+			aria-label='Back to Home page'
+		>
+			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
+		</a>
+
+		<div class='m-auto max-w-[64rem]'>
+			<h1 class='mt-1 mb-6 pr-14 text-4xl font-medium'>All Projects</h1>
+
+			<div class=''>
+				<table class='table-pin-rows table'>
+					<thead class='sticky top-0 z-10 backdrop-blur-md'>
+						<tr class='bg-transparent'>
+							<th>Year</th>
+							<th>Project</th>
+							<th class='hidden md:table-cell'>Made at</th>
+							<th class='hidden sm:table-cell'>Stack</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							projects.map((project) => (
+								<tr class='hover:bg-base-content/5 transition-colors'>
+									<td>{project.period.split(' ')[1]}</td>
+									<td class='text-base font-medium'>
+										{project.url ? (
+											<a href={project.url} class='link link-hover group flex justify-between py-1'>
+												{project.title}
+												<ArrowUpRight class='size-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+											</a>
+										) : (
+											project.title
+										)}
+										<div class='mt-2 flex flex-wrap gap-1 sm:hidden'>
+											{project.skills.map((skill) => (
+												<div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{skill}</div>
+											))}
+										</div>
+									</td>
+									<td class='hidden md:table-cell'>{project.employerName}</td>
+									<td class='hidden sm:table-cell'>
+										<div class='flex flex-wrap gap-1'>
+											{project.skills.map((skill) => (
+												<div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{skill}</div>
+											))}
+										</div>
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</Layout>

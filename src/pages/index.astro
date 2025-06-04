@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
 import ArrowUpRight from '~/assets/icons/arrowUpRight.svg';
 import DownloadIcon from '~/assets/icons/download.svg';
 import EmailIcon from '~/assets/icons/email.svg';
@@ -71,19 +72,30 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div class='mb-7 text-xl font-medium'>Featured Projects</div>
-			<div class='mb-14'>
+			<div class='mb-4'>
 				{
-					projects.map((project) => (
-						<a class='group link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
-							<div class='max-w-1/2'>
-								{project.title}
-								<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
-							</div>
-							<div>{project.period}</div>
-						</a>
-					))
+					projects.map(
+						(project) =>
+							project.slug && (
+								<a class='group link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
+									<div class='max-w-1/2'>
+										{project.title}
+										<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+									</div>
+									<div>{project.period}</div>
+								</a>
+							)
+					)
 				}
 			</div>
+			<a
+				href='/projects'
+				class='group link link-hover dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-500'
+			>
+				Full Projects List
+				<ArrowMoveLeftIcon class='stroke-base-content size-3 rotate-180 transition-transform group-hover:translate-x-1' />
+			</a>
+
 			<!-- <div class='mt-4 flex flex-wrap gap-1'>
 				{languages.map((item) => <div class='rounded-1 bg-base-300 px-2 py-1 text-xs font-medium'>{item}</div>)}
 			</div> -->

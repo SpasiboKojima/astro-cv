@@ -191,10 +191,25 @@ interface Project {
 	period: string;
 	description: string;
 	skills: string[];
-	slug: string;
+	slug?: string;
+	url?: string;
 }
 
 export const projects: Project[] = [
+	{
+		title: 'Set of brand websites',
+		employerName: 'EPAM',
+		period: 'Jan 2025 - Present',
+		description: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
+		skills: ['Next.js', 'React', 'Tailwind CSS', 'shadcn/ui'],
+	},
+	{
+		title: 'Goldie Dashboard',
+		employerName: 'CreativeIT',
+		period: 'Jun 2024 - Sep 2024',
+		description: '',
+		skills: ['React', 'Zustand', 'React Hook Form', 'Redux', 'Tailwind CSS', 'DaisyUI', 'Tiptap'],
+	},
 	{
 		title: 'INFINITY Webshop',
 		employerName: 'CreativeIT',
@@ -215,6 +230,30 @@ export const projects: Project[] = [
 				Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
 		skills: ['Next.js', 'React', 'Three.js (@react-three/fiber, @react-three/drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
 		slug: 'marketplace',
+		url: 'https://mocaptrade.com/',
+	},
+	{
+		title: 'D8X Website',
+		employerName: 'CreativeIT',
+		period: 'Sep 2023 - Oct 2023',
+		description: '',
+		skills: ['React', 'Tailwind CSS', 'SCSS', 'DaisyUI'],
+		url: 'https://d8x.exchange/',
+	},
+	{
+		title: 'D8X Trading Kit',
+		employerName: 'CreativeIT',
+		period: 'Aug 2023 - Sep 2023',
+		description: '',
+		skills: ['Next.js', 'React', 'Wagmi', 'Viem', 'SCSS', 'MUI', 'react-i18next', 'Jotai'],
+		url: 'https://github.com/D8-X/d8x-trader-frontend-lite',
+	},
+	{
+		title: 'Diatomix',
+		employerName: 'CreativeIT',
+		period: 'Aug 2023 - Sep 2023',
+		description: '',
+		skills: ['Next.js', 'React', 'Wagmi', 'Viem', 'SCSS', 'MUI', 'Jotai'],
 	},
 	{
 		title: 'Starly',
@@ -239,8 +278,8 @@ export const projects: Project[] = [
 			'Ethers',
 		],
 		slug: 'starly',
+		url: 'https://starly.io/',
 	},
-	// {/* https://boredlucky.vercel.app/ */}
 	{
 		title: 'Bored & Lucky',
 		employerName: 'CreativeIT',
@@ -252,6 +291,48 @@ export const projects: Project[] = [
 				- Created a small custom global store solution using React Context and Redux Thunk with persistence.`,
 		skills: ['Next.js', 'Typescript', 'Redux Thunk', 'Styled-components', 'Redis', 'Wagmi'],
 		slug: 'bored&lucky',
+		url: 'https://boredlucky.vercel.app/',
+	},
+	{
+		title: 'SwiftLoan',
+		employerName: 'CreativeIT',
+		period: 'Oct 2021 - Dec 2021',
+		description: '',
+		skills: ['Next.js', 'React', 'Tailwind CSS'],
+		url: 'https://swift.loan/',
+	},
+	{
+		title: 'TargControl',
+		employerName: 'TargSoft',
+		period: 'Mar 2021 - May 2021',
+		description: '',
+		skills: ['Angular'],
+		url: 'https://targcontrol.com/',
+	},
+	{
+		title: 'Notata',
+		employerName: 'TargSoft',
+		period: 'Feb 2021 - May 2021',
+		description: `My accomplishments:
+			- Refactoring
+			- Optimizations
+			- Additional pages and components`,
+		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'AWS Amplify', 'AWS AppSync'],
+		url: 'https://site.notata.io/',
+	},
+	{
+		title: '2 Canva Frames Extensions',
+		employerName: 'TargSoft',
+		period: 'Jul 2020 - Dec 2020',
+		description: '',
+		skills: ['JavaScript'],
+	},
+	{
+		title: 'Totle Backoffice',
+		employerName: 'Totle',
+		period: 'Mar 2020 - Jun 2020',
+		description: '',
+		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Web3.js'],
 	},
 	{
 		title: 'Totle Swap',
@@ -265,8 +346,29 @@ My accomplishments:
 - Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);
 
 Was integrated later as one of the routes for Metamask.`,
-		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid'],
+		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid', 'Web3.js'],
 		slug: 'totle',
+	},
+	{
+		title: 'TombCare',
+		employerName: 'TechBüro',
+		period: 'May 2018 - Jul 2018',
+		description: '',
+		skills: ['Solidity', 'Truffle', 'Web3.js'],
+	},
+	{
+		title: 'Gnosis Prediction Market',
+		employerName: 'TechBüro',
+		period: 'Apr 2018 - May 2018',
+		description: '',
+		skills: ['Node.js', 'React', 'Solidity', 'Truffle', 'Web3.js'],
+	},
+	{
+		title: 'Mineority',
+		employerName: 'TechBüro',
+		period: 'Mar 2018 - May 2018',
+		description: '',
+		skills: ['Node.js', 'React', 'Solidity', 'Truffle', 'Web3.js'],
 	},
 ];
 
