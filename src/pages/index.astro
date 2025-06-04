@@ -18,10 +18,10 @@ import Layout from '../layouts/Layout.astro';
 			<div class='mb-6 flex gap-4'>
 				<Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' width={96} height={96} loading='eager' />
 				<div class='mt-1 pr-14'>
-					<h1 class='text-4xl font-medium'>Andrew Katsewich</h1>
-					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-500'>
+					<h1 class='text-4xl font-semibold'>Andrew Katsewich</h1>
+					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-700'>
 						<div>Full Stack Developer</div>
-						<div class='flex items-center justify-center gap-1'>
+						<div class='flex items-center gap-1'>
 							<LocationIcon class='shrink-0' width={20} height={20} />
 							{location}
 						</div>
@@ -71,16 +71,16 @@ import Layout from '../layouts/Layout.astro';
 				</a>
 			</div>
 
-			<div class='mb-7 text-xl font-medium'>Featured Projects</div>
+			<h2 class='mb-7 text-xl font-medium'>Featured Projects</h2>
 			<div class='mb-4'>
 				{
 					projects.map(
 						(project) =>
 							project.slug && (
-								<a class='group link link-hover flex justify-between py-1' href={`/p/${project.slug}`}>
+								<a class='group link link-hover flex justify-between py-1 font-medium' href={`/p/${project.slug}`}>
 									<div class='max-w-1/2'>
 										{project.title}
-										<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+										<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 									</div>
 									<div>{project.period}</div>
 								</a>
@@ -90,15 +90,12 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<a
 				href='/projects'
-				class='group link link-hover dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-500'
+				class='group link link-hover dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-700'
 			>
 				Full Projects List
 				<ArrowMoveLeftIcon class='stroke-base-content size-3 rotate-180 transition-transform group-hover:translate-x-1' />
 			</a>
 
-			<!-- <div class='mt-4 flex flex-wrap gap-1'>
-				{languages.map((item) => <div class='rounded-1 bg-base-300 px-2 py-1 text-xs font-medium'>{item}</div>)}
-			</div> -->
 			<!-- <div class='flex gap-4 mb-14'>
 				<a href='/project'>
 					<div class='w-[17.8rem] h-[26rem] bg-slate-500 p-4 flex flex-col'>
@@ -115,29 +112,28 @@ import Layout from '../layouts/Layout.astro';
 				</a>
 			</div> -->
 
-			<div class='mb-7 text-xl font-medium'>Work History</div>
+			<h2 class='mb-7 text-xl font-medium'>Work History</h2>
 			<div class='mb-14 flex flex-col gap-2'>
 				{
 					jobs.map((job) => (
-						// index === 0 ? 'text-lg font-medium' : 'text-neutral-content/80'
 						<div>
-							<div class={`flex justify-between py-1`}>
+							<div class='flex justify-between py-1 font-medium'>
 								{job.employerName}
 								<div>{job.period}</div>
 							</div>
-							<div class='dark:text-neutral-content/80 text-sm text-gray-500'>{job.shortDescription}</div>
+							<div class='dark:text-neutral-content/80 text-sm text-gray-700'>{job.shortDescription}</div>
 						</div>
 					))
 				}
 			</div>
 
-			<div class='mb-7 text-xl font-medium'>Articles</div>
+			<h2 class='mb-7 text-xl font-medium'>Articles</h2>
 			<div class='flex flex-col gap-2'>
 				{
 					articles.map((project) => (
-						<a class='group link link-hover py-1' href={project.slug}>
+						<a class='group link link-hover py-1 font-medium' href={project.slug}>
 							{project.title}
-							<ArrowUpRight class='dark:text-neutral-content/80 -mb-1 inline size-4 text-gray-500 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+							<ArrowUpRight class='dark:text-neutral-content/80 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 						</a>
 					))
 				}
