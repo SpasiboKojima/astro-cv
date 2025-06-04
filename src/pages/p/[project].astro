@@ -7,10 +7,12 @@ import Layout from '../../layouts/Layout.astro';
 import { generateImages } from '~/lib/image';
 
 export function getStaticPaths() {
-	return projects.map((project) => ({
-		params: { project: project.slug },
-		props: { project },
-	}));
+	return projects
+		.filter((project) => project.slug)
+		.map((project) => ({
+			params: { project: project.slug },
+			props: { project },
+		}));
 }
 
 const { project: slug } = Astro.params;
@@ -20,7 +22,7 @@ const {
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
 
 const projectImages = Object.keys(images)
-	.filter((imagePath) => imagePath.includes(slug))
+	.filter((imagePath) => slug && imagePath.includes(slug))
 	.map((imagePath) => images[imagePath]);
 
 const imageOpts = await generateImages(projectImages);
