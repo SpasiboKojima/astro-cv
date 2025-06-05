@@ -1,10 +1,11 @@
 ---
 import type { ImageMetadata } from 'astro';
 import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
+import ArrowUpRight from '~/assets/icons/arrowUpRight.svg';
 import ProjectImages from '~/components/ProjectImages';
 import { projects } from '~/data';
-import Layout from '../../layouts/Layout.astro';
 import { generateImages } from '~/lib/image';
+import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
 	return projects
@@ -17,7 +18,7 @@ export function getStaticPaths() {
 
 const { project: slug } = Astro.params;
 const {
-	project: { title, description, skills },
+	project: { title, description, skills, url },
 } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
 
@@ -42,22 +43,23 @@ const imageOpts = await generateImages(projectImages);
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
 		</a>
 		<div class='m-auto max-w-prose'>
-			<div class='mb-6 flex gap-4 pr-14'>
-				<!-- <Image src={PhotoImg} alt='face profile' class='size-24 rounded-sm object-cover' /> -->
-				<div class='mt-1'>
-					<h1 class='text-4xl font-semibold'>{title}</h1>
-					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-700'>
-						<div>Full Stack Developer</div>
-					</div>
-				</div>
-			</div>
+			<h1 class='mb-6 pr-14 text-4xl font-semibold'>{title}</h1>
 
-			<div class='mb-14'>
+			<div class='mb-7'>
 				<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
-				<div class='mb-4 flex flex-wrap gap-1'>
+				<div class='flex flex-wrap gap-1'>
 					{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 				</div>
 			</div>
+
+			{
+				url && (
+					<a class='group link link-hover mb-7 inline-block w-full py-1 font-medium' href={url} target='_blank' rel='noopener noreferrer'>
+						{url}
+						<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+					</a>
+				)
+			}
 
 			<div class='mb-14'>
 				<ProjectImages client:load images={imageOpts} />

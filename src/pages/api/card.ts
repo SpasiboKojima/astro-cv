@@ -53,7 +53,7 @@ export async function GET() {
 					{
 						type: 'div',
 						props: {
-							tw: 'mb-auto mt-2 text-3xl text-gray-600',
+							tw: 'mb-auto mt-2 text-3xl text-gray-700',
 							children: 'Full Stack Developer',
 						},
 					},
