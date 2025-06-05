@@ -6,7 +6,7 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
-export const shortDescription = `I am a software engineer with 6 years of commercial experience. In development I choose lightweight and performant solutions and methods that will be extensible for future iterations. I have also adopted AI, I use the Codeium extension for both code completion and chat, it really comes in handy for some tasks.
+export const shortDescription = `I am a software engineer with 7 years of commercial experience. In development I choose lightweight and performant solutions and methods that will be extensible for future iterations. I have also adopted AI, I use the Windsurf extension for both code completion and chat, it really comes in handy for some tasks.
 
 When it comes to my work, I'm used to working in teams as well as starting and maintaining projects on my own. My experience covers various types of projects and I accumulated a lot of relevant solutions to different frontend needs. I don't mind digging someone else's code and enjoy refactoring and optimizing if there's a chance.
 
@@ -83,6 +83,7 @@ export const jobs: Job[] = [
 - Small Next.js + Tailwind project with integration of 3rd party API;
 - Created MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
 - Refactored, polished, and updated a middle-sized project to noticeably improve performance, UX, and code quality. Added various major features and pages to it;
+- Maintained and implemented better tech stack for a DEX Trading kit and it's introduction static website, adding new features and improving performance.
 - Created 3D animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls); Created a separate service to prerender animation files into .webm videos using Puppeteer;
 - Created a multistep product purchase app with lots of customization options for vendors, authentication, internationalization, and multiple payment providers.
 - Created an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
