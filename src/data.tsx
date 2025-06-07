@@ -215,20 +215,25 @@ export const projects: Project[] = [
 		title: 'INFINITY Webshop',
 		employerName: 'CreativeIT',
 		period: 'Nov 2023 - Jun 2024',
-		description: `My accomplishments:
+		description: `Academy and community platform that offers courses and information about personal wealth and investments in the integrated platform. Topic covered include health, forex trading, crypto, business, travel, networking. The new flow would offer users to assemble a personalized plan with content and accesses they need.
+
+My accomplishments:
 					- Implemented fully fledged Auth flow with credentials and custom backend using NextAuth
 					- Implemented internationalization in Next.js middleware using next-intl
-					- Implemented smoothly animated, responsive, and accessible interface efficiently optimized and near pixel-perfect to designs using Tailwind CSS, DaisyUI and framer-motion
+					- Implemented smoothly animated, responsive, and accessible interface efficiently optimized and near pixel-perfect to designs
 					- Created a purchase page with server-side data fetching, validations, progress synchronization, and lots of customization options for vendors.`,
-		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand'],
+		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand', 'framer-motion'],
 		slug: 'infinity',
 	},
 	{
-		title: '3D Animation Marketplace',
+		title: 'Mocaptrade',
 		employerName: 'CreativeIT',
 		period: 'Aug 2023 - Nov 2023',
-		description: `Created animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls)
-				Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
+		description: `Marketplace offering pre-recorded motion capture data that can be applied to any 3D character or model. You can preview the animation file in detail before purchasing it in an interactive player, with controls allowing you to inspect it from every angle, frame by frame.
+
+My accomplishments:
+				- Created animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls)
+				- Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
 		skills: ['Next.js', 'React', 'Three.js (@react-three/fiber, @react-three/drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
 		slug: 'marketplace',
 		url: 'https://mocaptrade.com/',
@@ -260,7 +265,10 @@ export const projects: Project[] = [
 		title: 'Starly',
 		employerName: 'CreativeIT',
 		period: 'Dec 2021 - May 2023',
-		description: `NFT marketplace with various collect-to-earn mechanics. Built on React, Redux, Styled-components, Firebase, Flow blockchain, and Ethers.
+		description: `Launchpad and marketplace for gamified NFT collections with various collect-to-earn mechanics. Features include marketplace, collector's score ranking, staking, vesting, bidding, and more. Aimed to make the NFT creating, selling, and collecting as simple as possible, it offers the ultimate experience to creators and their fans. Offers platform's own native utility token $STARLY, which can be used to participate in new drops, get missing NFTs, stake them to increase your NFT reward claim rate & earn 15% APY.
+		Created by an experienced team who previously founded social networks F3 with 30+ million users and Ask.fm with 150+ million users.
+		Trusted by Dapper Labs. Built on the FLOW blockchain.
+
 				My accomplishments:
 				- Optimized, refactored, and improved an already existing code base of a middle-sized project, which greatly improved performance, UX and code quality (-40% bundle size, resolved hundreds of eslint and typescript errors, and fixed dozens of old bugs);
 				- Implemented NFT and Starly token staking functionalities, bidding, vesting, and Binance smart chain payment integration;
@@ -285,8 +293,10 @@ export const projects: Project[] = [
 		title: 'Bored & Lucky',
 		employerName: 'CreativeIT',
 		period: 'Jul 2022 - Dec 2022',
-		description: `‘Bored & Lucky’ is and Ethereum smart-contract based NFT raffle platform. Built on Next.js, Typescript, Redux Thunk, Styled-components, Redis, Wagmi.
-				My responsibilities and accomplishments were all front-end parts except for project setup and initial raffle layout, i.e.:
+		description: `‘Bored & Lucky’ is an Ethereum smart-contract based NFT raffle platform. All raffles are smart contract based - 100% fair, transparent & audited by QuillAudits. To guarantee transparency and unbiased approach the winner is determined via transaction on blockchain using Chainlink VRF to independently generate a random number to draw the winner.
+
+				My accomplishments:
+				- All front-end parts except for project setup and initial raffle layout;
 				- Implemented UI near pixel-perfect to designs and ensured its UX and responsiveness with the help of the QA team;
 				- Implemented Web3 related logic of displaying time-based raffles and interacting with them with Web3 wallets;
 				- Created a small custom global store solution using React Context and Redux Thunk with persistence.`,
@@ -339,14 +349,13 @@ export const projects: Project[] = [
 		title: 'Totle Swap',
 		employerName: 'Totle',
 		period: 'May 2019 - Mar 2020',
-		description: `Decentralized exchanges aggregator that lets you swap tokens at best prices available.,
+		description: `Ethereum-based decentralized exchange aggregator that lets you swap tokens at best prices available. Utilizing smart order-routing technology, Totle Swap looks at all the swap rates across many DEX, gives you a list of the best rates available, and facilitates the swap through the DEX or multiple DEX if needed.
+		Was integrated later as one of the routes for Metamask.
 
 My accomplishments:
 - Setup a new lightweight front-end app with React + Redux that handled API calls and Web3 wallets interactions;
 - Integrated our back-end service with various wallets (i.e. MyEtherWallet);
-- Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);
-
-Was integrated later as one of the routes for Metamask.`,
+- Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);`,
 		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid', 'Web3.js'],
 		slug: 'totle',
 	},
