@@ -1,11 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
 	"files": {
-		"ignore": ["**/*.astro"]
+		"includes": ["**", "!**/*.astro", "!dist/**"]
 	},
-	"organizeImports": {
-		"enabled": false
-	},
+	"assist": { "actions": { "source": { "organizeImports": "off", "useSortedProperties": "on" } } },
 	"formatter": {
 		"indentStyle": "tab",
 		"lineWidth": 140,
@@ -30,7 +28,11 @@
 				"noUnusedImports": "warn"
 			},
 			"style": {
-				"useEnumInitializers": "off"
+				"useEnumInitializers": "off",
+				"useSelfClosingElements": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error"
 			}
 		}
 	}

@@ -9,7 +9,7 @@ const ThemeToggle = () => {
 	};
 
 	const checked = () => theme() === 'dark';
-	
+
 	createEffect(() => {
 		console.log('checked() :>> ', checked());
 	});
