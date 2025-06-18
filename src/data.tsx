@@ -389,6 +389,10 @@ interface Article {
 
 export const articles: Article[] = [
 	{
+		title: '7 Easy UX Improvements for your Webapp',
+		slug: 'https://dev.to/thanksboss/7-easy-ux-improvements-for-your-webapp-4mia',
+	},
+	{
 		title: 'Anticipating User Errors in Web',
 		slug: 'https://dev.to/thanksboss/anticipating-user-errors-in-web-3nbc',
 	},
