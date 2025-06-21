@@ -60,10 +60,10 @@ export default function ProjectImages(props: ProjectImagesProps) {
 
 	onMount(() => {
 		window.addEventListener('keydown', changeImage);
-	});
 
-	onCleanup(() => {
-		window.removeEventListener('keydown', changeImage);
+		onCleanup(() => {
+			window.removeEventListener('keydown', changeImage);
+		});
 	});
 
 	function changeImage(e: KeyboardEvent) {
