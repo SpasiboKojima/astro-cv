@@ -19,6 +19,16 @@
 
 @theme {
 	--font-geist: 'Geist';
+
+	--animate-fade-in: fade-in 0.3s forwards;
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 }
 
 @layer components {
