@@ -1,4 +1,4 @@
-import { createSignal, For, onMount, Show, type JSX, type JSXElement } from 'solid-js';
+import { createSignal, For, onCleanup, onMount, Show, type JSX, type JSXElement } from 'solid-js';
 import type { ImageOpts } from '~/lib/image';
 
 interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
@@ -23,20 +23,20 @@ const Picture = (props: PictureProps) => {
 	);
 };
 
+const [loadedImages, setLoadedImages] = createSignal<Record<string, boolean>>({});
+
 interface PictureWithLoadingProps extends PictureProps {
 	id: string;
 }
 
-const [loadedImageMap, setLoadedImageMap] = createSignal<Record<string, boolean>>({});
-
 const PictureWithLoading = (props: PictureWithLoadingProps) => {
-	const isLoaded = () => loadedImageMap()[props.id];
+	const isLoaded = () => loadedImages()[props.id];
 
 	return (
 		<>
-			<Picture {...props} onload={() => setLoadedImageMap({ ...loadedImageMap(), [props.id]: true })} />
+			<Picture {...props} onload={() => setLoadedImages({ ...loadedImages(), [props.id]: true })} />
 			<Show when={!isLoaded()}>
-				<div class="fixed inset-0 z-20 size-full animate-fade-in flex-center bg-black/40">
+				<div class="animate-fade-in flex-center fixed inset-0 z-20 size-full bg-black/40">
 					<span class="loading loading-ring w-12" />
 				</div>
 			</Show>
@@ -60,6 +60,10 @@ export default function ProjectImages(props: ProjectImagesProps) {
 
 	onMount(() => {
 		window.addEventListener('keydown', changeImage);
+	});
+
+	onCleanup(() => {
+		window.removeEventListener('keydown', changeImage);
 	});
 
 	function changeImage(e: KeyboardEvent) {
@@ -105,11 +109,11 @@ export default function ProjectImages(props: ProjectImagesProps) {
 			</div>
 
 			<dialog class="modal" ref={modalRef}>
-				<div class="modal-box w-auto max-w-full p-0 md:max-w-10/12 min-w-[80%]">
+				<div class="modal-box w-auto max-w-full min-w-4/5 p-0 md:max-w-10/12">
 					<Show
 						when={selectedImage()}
 						fallback={
-							<div class="size-full animate-fade-in flex-center">
+							<div class="animate-fade-in flex-center size-full">
 								<span class="loading loading-ring w-12" />
 							</div>
 						}
