@@ -1,6 +1,5 @@
-import { createSignal, For, onMount, Show, type JSX, type JSXElement } from 'solid-js';
+import { createSignal, For, onCleanup, onMount, Show, type JSX, type JSXElement } from 'solid-js';
 import type { ImageOpts } from '~/lib/image';
-
 
 interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
 	options: ImageOpts;
@@ -13,6 +12,7 @@ const Picture = (props: PictureProps) => {
 		const src = options().rawOptions.src;
 		return typeof src === 'string' ? src : src.src;
 	};
+
 	return (
 		<picture>
 			<For each={options().options} fallback={null}>
@@ -20,6 +20,27 @@ const Picture = (props: PictureProps) => {
 			</For>
 			<img {...props} alt={props.alt} src={getSrc()} />
 		</picture>
+	);
+};
+
+const [loadedImages, setLoadedImages] = createSignal<Record<string, boolean>>({});
+
+interface PictureWithLoadingProps extends PictureProps {
+	id: string;
+}
+
+const PictureWithLoading = (props: PictureWithLoadingProps) => {
+	const isLoaded = () => loadedImages()[props.id];
+
+	return (
+		<>
+			<Picture {...props} onload={() => setLoadedImages({ ...loadedImages(), [props.id]: true })} />
+			<Show when={!isLoaded()}>
+				<div class="animate-fade-in flex-center fixed inset-0 z-20 size-full bg-black/40">
+					<span class="loading loading-ring w-12" />
+				</div>
+			</Show>
+		</>
 	);
 };
 
@@ -32,10 +53,17 @@ export default function ProjectImages(props: ProjectImagesProps) {
 	let modalRef: HTMLDialogElement | undefined;
 	const [selectedIndex, setSelectedIndex] = createSignal<number | null>(null);
 
-	const selectedImage = () => props.images[selectedIndex() || 0];
+	const selectedImage = () => {
+		const index = selectedIndex();
+		return index !== null ? props.images[index] : null;
+	};
 
 	onMount(() => {
 		window.addEventListener('keydown', changeImage);
+
+		onCleanup(() => {
+			window.removeEventListener('keydown', changeImage);
+		});
 	});
 
 	function changeImage(e: KeyboardEvent) {
@@ -81,10 +109,17 @@ export default function ProjectImages(props: ProjectImagesProps) {
 			</div>
 
 			<dialog class="modal" ref={modalRef}>
-				<div class="modal-box w-auto max-w-full p-0 md:max-w-10/12">
-					<Show when={selectedImage()} fallback={<div>Loading...</div>}>
+				<div class="modal-box w-auto max-w-full min-w-4/5 p-0 md:max-w-10/12">
+					<Show
+						when={selectedImage()}
+						fallback={
+							<div class="animate-fade-in flex-center size-full">
+								<span class="loading loading-ring w-12" />
+							</div>
+						}
+					>
 						{(item) => (
-							<Picture
+							<PictureWithLoading
 								options={{
 									...item(),
 									srcSet: item().src.map((src) => ({
@@ -92,6 +127,9 @@ export default function ProjectImages(props: ProjectImagesProps) {
 										values: [],
 									})),
 								}}
+								id={selectedIndex()?.toString() ?? ''}
+								width={item().attributes.width}
+								height={item().attributes.height}
 								alt="Project's UI mockup"
 								class="size-full max-h-screen object-contain"
 								onClick={() => modalRef?.close()}
