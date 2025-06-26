@@ -1,4 +1,4 @@
-import { createSignal, For, onCleanup, onMount, Show, type JSX, type JSXElement } from 'solid-js';
+import { createSignal, For, onMount, Show, type JSX, type JSXElement } from 'solid-js';
 import type { ImageOpts } from '~/lib/image';
 
 interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
@@ -53,18 +53,14 @@ export default function ProjectImages(props: ProjectImagesProps) {
 	let modalRef: HTMLDialogElement | undefined;
 	const [selectedIndex, setSelectedIndex] = createSignal<number | null>(null);
 
+	onMount(() => {
+		setLoadedImages({});
+	});
+
 	const selectedImage = () => {
 		const index = selectedIndex();
 		return index !== null ? props.images[index] : null;
 	};
-
-	onMount(() => {
-		window.addEventListener('keydown', changeImage);
-
-		onCleanup(() => {
-			window.removeEventListener('keydown', changeImage);
-		});
-	});
 
 	function changeImage(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight') {
@@ -108,8 +104,8 @@ export default function ProjectImages(props: ProjectImagesProps) {
 				</For>
 			</div>
 
-			<dialog class="modal" ref={modalRef}>
-				<div class="modal-box w-auto max-w-full min-w-4/5 p-0 md:max-w-10/12">
+			<dialog class="modal" ref={modalRef} onkeydown={changeImage}>
+				<div class="modal-box w-auto max-w-full min-w-2/5 p-0 md:max-w-10/12">
 					<Show
 						when={selectedImage()}
 						fallback={
