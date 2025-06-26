@@ -87,10 +87,10 @@ export default function ProjectImages(props: ProjectImagesProps) {
 			<div class="grid gap-4 md:grid-cols-2">
 				<For each={props.images} fallback={<div>Loading...</div>}>
 					{(item, index) => (
-						<button aria-label={`Open image ${index() + 1} fullscreen`} onClick={() => selectImage(index())} class="self-center overflow-hidden rounded-xl border border-gray-200 shadow">
+						<button aria-label={`Open image ${index() + 1} fullscreen`} onClick={() => selectImage(index())} class="self-center overflow-hidden rounded-xl border border-gray-200 shadow transition-transform duration-500 ease-in-out hover:scale-110">
 							<Picture
 								options={item}
-								class="h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+								class="h-full object-cover"
 								alt="Project's UI mockup"
 								width={item.attributes.width}
 								height={item.attributes.height}
