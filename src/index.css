@@ -42,3 +42,14 @@
 		@apply flex items-center justify-center;
 	}
 }
+
+@layer utilities {
+	.link-hover.link-primary {
+		@apply text-inherit;
+		&:hover {
+			@media (hover: hover) {
+				@apply text-shadow-primary text-blue-800 no-underline transition-all text-shadow-[1px_0_10px] dark:text-blue-200;
+			}
+		}
+	}
+}

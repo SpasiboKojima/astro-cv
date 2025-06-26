@@ -69,4 +69,27 @@ import '~/index.css';
 	[data-theme='dark'] .background {
 		background-image: radial-gradient(#021027, #000000 90%);
 	}
+
+	@keyframes flash {
+		0% {
+			filter: brightness(2);
+			scale: 1.5;
+		}
+		100% {
+			filter: brightness(1);
+			scale: 1;
+		}
+	}
+
+	.reveal {
+		main {
+			animation: fade-in 2s forwards;
+		}
+	}
+
+	[data-theme='dark'] .reveal {
+		.background {
+			animation: flash 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+		}
+	}
 </style>
