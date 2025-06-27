@@ -63,11 +63,9 @@ import Layout from '../layouts/Layout.astro';
 				<div class='mb-4 flex flex-wrap gap-1'>
 					{skillsPrimary.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 				</div>
-				<a href="./Andrew Katsewich's CV.pdf" target='_blank' referrerpolicy='no-referrer'>
-					<button class='hover btn btn-primary'>
-						<DownloadIcon width={20} height={20} />
-						Download CV
-					</button>
+				<a class='hover btn btn-primary' href="./Andrew Katsewich's CV.pdf" target='_blank' referrerpolicy='no-referrer'>
+					<DownloadIcon width={20} height={20} />
+					Download CV
 				</a>
 			</div>
 
