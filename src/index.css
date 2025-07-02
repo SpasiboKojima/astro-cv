@@ -4,15 +4,15 @@
 @plugin "daisyui/theme" {
 	name: 'light';
 	default: true;
-	--color-primary: oklch(57% 0.185 251.19);
+	--color-primary: oklch(0.57 0.185 257);
 	--color-primary-content: #fff;
 }
 @plugin "daisyui/theme" {
 	name: 'dark';
 	/* prefersdark: true; */
-	--color-primary: oklch(57% 0.185 251.19);
-	--color-base-content: rgb(237 237 237);
-	--color-info-content: rgb(161 161 161);
+	--color-primary: oklch(0.57 0.185 257);
+	--color-base-content: oklch(0.94 0 0);
+	--color-info-content: oklch(0.7 0 0);
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

@@ -18,7 +18,7 @@ export function getStaticPaths() {
 
 const { project: slug } = Astro.params;
 const {
-	project: { title, description, skills, url },
+	project: { title, description, skills, url, color },
 } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
 
@@ -29,7 +29,7 @@ const projectImages = Object.keys(images)
 const imageOpts = await generateImages(projectImages);
 ---
 
-<Layout>
+<Layout style={{ '--background-color': color }}>
 	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
 		<a href='/' class='group mb-8 hidden items-center lg:flex' aria-label='Back to Home page'>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
@@ -54,14 +54,14 @@ const imageOpts = await generateImages(projectImages);
 
 			{
 				url && (
-					<a class='group link link-hover mb-7 inline-block w-full py-1 font-medium' href={url} target='_blank' rel='noopener noreferrer'>
+					<a class='group link link-hover inline-block w-full py-1 font-medium' href={url} target='_blank' rel='noopener noreferrer'>
 						{url}
 						<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 					</a>
 				)
 			}
 
-			<div class='mb-14'>
+			<div class='my-14'>
 				<ProjectImages client:load images={imageOpts} />
 			</div>
 		</div>

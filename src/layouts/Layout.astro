@@ -1,10 +1,17 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { ClientRouter } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import ThemeIcon from '~/components/ThemeIcon.astro';
 import { jobs, location } from '~/data';
 import '~/font.css';
 import '~/index.css';
+
+interface Props {
+	style?: HTMLAttributes<'body'>['style'];
+}
+
+const { style } = Astro.props;
 ---
 
 <!doctype html>
@@ -35,7 +42,7 @@ import '~/index.css';
 
 		<meta name='theme-color' content='oklch(20% 0.105 251.19 / 0.5)' />
 	</head>
-	<body class='relative flex min-h-screen flex-col'>
+	<body class='relative flex min-h-screen flex-col' style={style}>
 		<div class='background'></div>
 		<ThemeIcon />
 
@@ -59,7 +66,9 @@ import '~/index.css';
 		position: fixed;
 		inset: 0px;
 		z-index: -1;
-		background-image: radial-gradient(#cee1ff, #ffffff 75%);
+
+		--adjusted-color: oklch(from var(--background-color) l c h / 0.25);
+		background-image: radial-gradient(var(--adjusted-color, oklch(0.9 0.046 257)), oklch(1 0 0) 75%);
 
 		background-size: max(100vw, 100vh) max(100vw, 100vh);
 		background-position: center;
@@ -67,6 +76,6 @@ import '~/index.css';
 	}
 
 	[data-theme='dark'] .background {
-		background-image: radial-gradient(#021027, #000000 90%);
+		background-image: radial-gradient(var(--adjusted-color, oklch(0.2 0.08 257)), oklch(0 0 0) 90%);
 	}
 </style>

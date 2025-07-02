@@ -72,14 +72,14 @@ export const jobs: Job[] = [
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Present',
 		description: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
-		shortDescription: 'Working on migrating a set of websites for big enterprise client to Next.js.',
+		shortDescription: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
 	},
 	{
 		title: 'Frontend Web Developer',
 		employeeImg: CreativeITImg,
 		employerName: 'CreativeIT',
 		period: 'Sep 2021 - Nov 2024',
-		description: `Used React and Next.js on a total of 7 projects.
+		description: `Used React and Next.js on a total of 8 projects.
 - Small Next.js + Tailwind project with integration of 3rd party API;
 - Created MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
 - Refactored, polished, and updated a middle-sized project to noticeably improve performance, UX, and code quality. Added various major features and pages to it;
@@ -91,7 +91,7 @@ export const jobs: Job[] = [
 Also:
 - Participated in mentoring to speed up the unboarding process of less experienced developer;
 - Participated in conducting technical interviews.`,
-		shortDescription: 'Created in total 7 projects with React and Next.js. Participated in mentoring and conducting technical interviews.',
+		shortDescription: 'Created in total 8 projects with React and Next.js. Participated in mentoring and conducting technical interviews.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -186,7 +186,7 @@ export const courses: Course[] = [
 	},
 ];
 
-interface Project {
+export interface Project {
 	title: string;
 	employerName: string;
 	period: string;
@@ -194,6 +194,7 @@ interface Project {
 	skills: string[];
 	slug?: string;
 	url?: string;
+	color?: `oklch(${string})`;
 }
 
 export const projects: Project[] = [
@@ -224,6 +225,7 @@ My accomplishments:
 					- Created a purchase page with server-side data fetching, validations, progress synchronization, and lots of customization options for vendors.`,
 		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand', 'framer-motion'],
 		slug: 'infinity',
+		color: 'oklch(0.63 0.17 249.61)',
 	},
 	{
 		title: 'Mocaptrade',
@@ -236,6 +238,7 @@ My accomplishments:
 				- Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
 		skills: ['Next.js', 'React', 'Three.js (@react-three/fiber, @react-three/drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
 		slug: 'marketplace',
+		color: 'oklch(0.52 0.24 275.78)',
 		url: 'https://mocaptrade.com/',
 	},
 	{
@@ -287,6 +290,7 @@ My accomplishments:
 			'Ethers',
 		],
 		slug: 'starly',
+		color: 'oklch(0.57 0.27 295.45)',
 		url: 'https://starly.io/',
 	},
 	{
@@ -303,6 +307,7 @@ My accomplishments:
 		skills: ['Next.js', 'Typescript', 'Redux Thunk', 'Styled-components', 'Redis', 'Wagmi'],
 		slug: 'bored&lucky',
 		url: 'https://boredlucky.vercel.app/',
+		color: 'oklch(0.82 0.16 88.46)'
 	},
 	{
 		title: 'SwiftLoan',
@@ -358,6 +363,7 @@ My accomplishments:
 - Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);`,
 		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid', 'Web3.js'],
 		slug: 'totle',
+		color: 'oklch(0.65 0.16 244.05)',
 	},
 	{
 		title: 'TombCare',
