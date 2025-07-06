@@ -15,12 +15,13 @@ export async function GET() {
 	try {
 		fontData = await (await font).arrayBuffer();
 	} catch(err) {
-		console.log('err :>> ', err);
+		console.log('err :>> ', err, fontData);
 	}
 
 	return new ImageResponse(
 		{
 			type: 'div',
+			key: 'root',
 			props: {
 				style: {
 					lineHeight: 1.125,
