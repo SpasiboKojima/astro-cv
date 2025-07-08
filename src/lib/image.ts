@@ -1,10 +1,12 @@
 import type { GetImageResult } from 'astro';
 import { getImage } from 'astro:assets';
 
-export interface ImageOpts extends Omit<GetImageResult, 'src' | 'srcSet' | 'options'> {
+export interface ImageOpts {
+	// biome-ignore lint/suspicious/noExplicitAny: Kinda unknown
+	attributes: Record<string, any>;
+	origSrc: GetImageResult['rawOptions']['src'];
 	src: string[];
-	srcSet: GetImageResult['srcSet'][];
-	options: GetImageResult['options'][];
+	srcSet: Partial<ImageMetadata>[];
 }
 
 type ImageImport = () => Promise<{
@@ -18,10 +20,19 @@ const generateImageVariants = async (image: ImageImport) => {
 	const webp = await getImage({ src: imageMetadata, format: 'webp', widths: [Math.round(imageMetadata.width / 2), imageMetadata.width] });
 
 	return {
-		...avif,
+		attributes: avif.attributes,
+		origSrc: avif.rawOptions.src,
 		src: [avif.src, webp.src],
-		srcSet: [avif.srcSet, webp.srcSet],
-		options: [avif.options, webp.options],
+		srcSet: [
+			{
+				format: 'avif',
+				src: avif.srcSet.attribute,
+			},
+			{
+				format: 'webp',
+				src: webp.srcSet.attribute,
+			},
+		],
 	} satisfies ImageOpts;
 };
 

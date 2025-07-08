@@ -1,4 +1,4 @@
-import { createSignal, For, onMount, Show, type JSX, type JSXElement } from 'solid-js';
+import { createSignal, For, onMount, Show, splitProps, type JSX, type JSXElement } from 'solid-js';
 import type { ImageOpts } from '~/lib/image';
 
 interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
@@ -6,19 +6,20 @@ interface PictureProps extends JSX.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const Picture = (props: PictureProps) => {
-	const options = () => props.options;
+	const [localProps, imageProps] = splitProps(props, ['options', 'sizes']);
+	const options = () => localProps.options;
 
 	const getSrc = () => {
-		const src = options().rawOptions.src;
+		const src = options().origSrc;
 		return typeof src === 'string' ? src : src.src;
 	};
 
 	return (
 		<picture>
-			<For each={options().options} fallback={null}>
-				{(item, index) => <source sizes={props.sizes} srcset={options().srcSet[index()].attribute} type={`image/${item.format}`} />}
+			<For each={options().srcSet} fallback={null}>
+				{(item) => <source sizes={localProps.sizes} srcset={item.src} type={`image/${item.format}`} />}
 			</For>
-			<img {...props} alt={props.alt} src={getSrc()} />
+			<img {...imageProps} alt={props.alt} src={getSrc()} />
 		</picture>
 	);
 };
@@ -87,7 +88,11 @@ export default function ProjectImages(props: ProjectImagesProps) {
 			<div class="grid gap-4 md:grid-cols-2">
 				<For each={props.images} fallback={<div>Loading...</div>}>
 					{(item, index) => (
-						<button aria-label={`Open image ${index() + 1} fullscreen`} onClick={() => selectImage(index())} class="self-center overflow-hidden rounded-xl border border-gray-200 shadow">
+						<button
+							aria-label={`Open image ${index() + 1} fullscreen`}
+							onClick={() => selectImage(index())}
+							class="self-center overflow-hidden rounded-xl border border-gray-200 shadow"
+						>
 							<Picture
 								options={item}
 								class="h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
@@ -117,9 +122,9 @@ export default function ProjectImages(props: ProjectImagesProps) {
 							<PictureWithLoading
 								options={{
 									...item(),
-									srcSet: item().src.map((src) => ({
-										attribute: src,
-										values: [],
+									srcSet: item().src.map((src, index) => ({
+										src: src,
+										format: item().srcSet[index].format,
 									})),
 								}}
 								id={selectedIndex()?.toString() ?? ''}
