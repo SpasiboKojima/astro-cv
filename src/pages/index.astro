@@ -8,7 +8,7 @@ import GithubIcon from '~/assets/icons/github.svg';
 import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
 import PhotoImg from '~/assets/images/photo.png';
-import { articles, jobs, location, projects, shortDescription, skillsPrimary } from '~/data';
+import { articles, jobs, location, projects, description, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<div class='mb-14'>
 				<div class='flex'>
-					<p class='mb-4 text-pretty whitespace-pre-line'>{shortDescription}</p>
+					<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
 					<div class='divider divider-horizontal !h-40 self-center'></div>
 					<div class='flex flex-col justify-center gap-4'>
 						<a

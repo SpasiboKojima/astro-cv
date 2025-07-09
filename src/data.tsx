@@ -6,11 +6,12 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
-export const shortDescription = `I am a software engineer with 7 years of commercial experience. In development I choose lightweight and performant solutions and methods that will be extensible for future iterations. I have also adopted AI, I use the Windsurf extension for both code completion and chat, it really comes in handy for some tasks.
+export const shortDescription = `I am a software engineer with 7 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both projects where I was working as a part of a frontend team and projects which I setup and maintained on my own.
+Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
+export const description = `${shortDescription}
 
-When it comes to my work, I'm used to working in teams as well as starting and maintaining projects on my own. My experience covers various types of projects and I accumulated a lot of relevant solutions to different frontend needs. I don't mind digging someone else's code and enjoy refactoring and optimizing if there's a chance.
-
-I take responsibility for product development and think about end-user.`;
+In development I prioritize lightweight, high-performance, and extensible solutions. I have also adopted AI, I use the Windsurf extension for both code completion and chat to enhance productivity in some tasks. I don't mind digging someone else's code and enjoy refactoring and optimizing if there's a chance.
+`;
 export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS', 'Wagmi', 'Ethers'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
@@ -45,12 +46,8 @@ export const skills = [
 		skills: ['PostgreSQL', 'MySQL'],
 	},
 	{
-		title: 'Blockchain development',
-		skills: ['Wagmi', 'Viem (Ethers, Web3.js)', 'Solidity', 'Truffle Framework'],
-	},
-	{
 		title: 'Special Features',
-		skills: ['Tiptap', 'React Three Fiber'],
+		skills: ['Tiptap', 'React Three Fiber', 'Wagmi', 'Viem (Ethers, Web3.js)'],
 	},
 ];
 
@@ -179,11 +176,6 @@ export const courses: Course[] = [
 		url: 'https://www.udemy.com/certificate/UC-33886559-10e3-4aca-a032-2dd8f670480d/',
 		icon: 'courses/database',
 	},
-	{
-		title: "Udemy - Ethereum and Solidity: The Complete Developer's Guide",
-		url: 'https://www.udemy.com/certificate/UC-WJRO97KJ/',
-		icon: 'courses/ethereum',
-	},
 ];
 
 export interface Project {
@@ -307,7 +299,7 @@ My accomplishments:
 		skills: ['Next.js', 'Typescript', 'Redux Thunk', 'Styled-components', 'Redis', 'Wagmi'],
 		slug: 'bored&lucky',
 		url: 'https://boredlucky.vercel.app/',
-		color: 'oklch(0.82 0.16 88.46)'
+		color: 'oklch(0.82 0.16 88.46)',
 	},
 	{
 		title: 'SwiftLoan',

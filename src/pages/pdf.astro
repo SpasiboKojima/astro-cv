@@ -5,8 +5,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<main class='mx-auto max-w-xl p-4 font-[Geist] lg:max-w-5xl'>
+	<main class='mx-auto max-w-xl p-4 font-[Geist] lg:max-w-6xl'>
 		<h1 class='h1 text-center'>Andrew Katsewich</h1>
+
+		<div class='mt-2 flex flex-wrap justify-center gap-1 text-sm'>
+			<div>Full Stack Developer</div>
+			<div class='divider divider-horizontal m-0'></div>
+			<div>{location}</div>
+		</div>
+
 		<div class='mt-4 flex flex-wrap justify-center gap-1'>
 			<a href='mailto:andrew.katsewich@gmail.com' target='blank' class='link-hover link inline-flex items-center gap-2'>
 				<span class='font-medium'>andrew.katsewich@gmail.com</span>
@@ -16,17 +23,12 @@ import Layout from '../layouts/Layout.astro';
 				<span class='font-medium'>LinkedIn</span>
 			</a>
 		</div>
-		<div class='mt-4 flex flex-wrap justify-center gap-1'>
-			<div>Full Stack Developer</div>
-			<div class='divider divider-horizontal m-0'></div>
-			<div>{location}</div>
-		</div>
-		<div class='mt-6 leading-snug whitespace-pre-line'>{shortDescription}</div>
+		<div class='mt-6 text-sm leading-snug whitespace-pre-line'>{shortDescription}</div>
 		<div class='mt-6'>
 			<h2 class='h2 border-b border-gray-200'>WORK EXPERIENCE</h2>
 			{/* <hr class="my-4" /> */}
 			<div class='mt-4 flex flex-col gap-4'>
-				{jobs.map((job) => <JobPosition {...job} />)}
+				{jobs.slice(0, -2).map((job) => <JobPosition {...job} />)}
 			</div>
 		</div>
 		<div class='mt-6'>
@@ -43,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		<div class='mt-6'>
 			<h2 class='h2 border-b border-gray-200'>COURSES</h2>
-			<ul class='mt-4 flex flex-col gap-2 font-semibold'>
+			<ul class='mt-4 flex flex-col gap-2 font-semibold text-sm'>
 				{
 					courses.map((course) => (
 						<a target='blank' class='link-hover link' href={course.url}>
@@ -56,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
 
 		<div class='mt-6'>
 			<h2 class='h2 border-b border-gray-200'>SKILLS</h2>
-			<div class='mt-4 flex flex-col gap-2'>
+			<div class='mt-4 flex flex-col gap-2 text-sm'>
 				{
 					skills.map((skillSet) => (
 						<div>
@@ -68,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		<div class='mt-6'>
 			<h2 class='h2 border-b border-gray-200'>LANGUAGES</h2>
-			<div class='mt-4'>{languages.join(', ')}</div>
+			<div class='mt-4 text-sm'>{languages.join(', ')}</div>
 		</div>
 	</main>
 </Layout>
