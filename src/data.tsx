@@ -10,7 +10,7 @@ export const shortDescription = `I am a software engineer with 7 years of commer
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
-In development I prioritize lightweight, high-performance, and extensible solutions. I have also adopted AI, I use the Windsurf extension for both code completion and chat to enhance productivity in some tasks. I don't mind digging someone else's code and enjoy refactoring and optimizing if there's a chance.
+I prioritize lightweight, high-performance, and extensible solutions in development. I leverage AI tools such as Windsurf and GitHub Copilot for code completion and chat to enhance productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when opportunities arise.
 `;
 export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS', 'Wagmi', 'Ethers'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
@@ -68,8 +68,11 @@ export const jobs: Job[] = [
 		employeeImg: EPAMImg,
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Present',
-		description: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
-		shortDescription: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
+		description: `- Migrated 2 websites for a big enterprise client's brands using Next.js;
+- Set a standard on how to setup and use TailwindCSS correctly;
+- Taught 2 Lead developers how to use ESLint.`,
+		shortDescription:
+			'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of TailwindCSS and adjacent tools.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -77,18 +80,19 @@ export const jobs: Job[] = [
 		employerName: 'CreativeIT',
 		period: 'Sep 2021 - Nov 2024',
 		description: `Used React and Next.js on a total of 8 projects.
-- Small Next.js + Tailwind project with integration of 3rd party API;
-- Created MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
+- Created a small Next.js + Tailwind project with integration of a 3rd party API;
+- Created an MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
 - Refactored, polished, and updated a middle-sized project to noticeably improve performance, UX, and code quality. Added various major features and pages to it;
-- Maintained and implemented better tech stack for a DEX Trading kit and it's introduction static website, adding new features and improving performance.
-- Created 3D animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls); Created a separate service to prerender animation files into .webm videos using Puppeteer;
-- Created a multistep product purchase app with lots of customization options for vendors, authentication, internationalization, and multiple payment providers.
+- Maintained and implemented a better tech stack for a DEX Trading kit and it's introduction static website, adding new features and improving performance.
+- Created a 3D animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls); Created a separate service to pre-render animation files into .webm videos using Puppeteer;
+- Created a multistep app for purchasing products with lots of customization options for vendors, authentication, internationalization, and multiple payment providers;
 - Created an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
 
 Also:
-- Participated in mentoring to speed up the unboarding process of less experienced developer;
-- Participated in conducting technical interviews.`,
-		shortDescription: 'Created in total 8 projects with React and Next.js. Participated in mentoring and conducting technical interviews.',
+- Mentored a less experienced developer to speed up the onboarding process;
+- Conducted a dozen technical interviews.`,
+		shortDescription:
+			'Created a total of 8 projects with React and Next.js, and contributed to team growth through mentoring and conducting technical interviews.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -96,10 +100,10 @@ Also:
 		employerName: 'TargSoft',
 		period: 'Jul 2020 - Aug 2021',
 		description: ` - Created 2 Canva editing extensions (Javascript);
-- Worked on refactoring and optimizing a React frontend for a small startup;
-- Worked on TargControl time tracking platform (Angular 11 & Typescript).`,
+- Refactored and optimized a React frontend for a small startup;
+- Supported TargControl time tracking platform (Angular 11 & Typescript).`,
 		shortDescription:
-			'Created 2 Canva editing extensions. Worked on refactoring and optimizing a React frontend. Worked on TargControl time tracking platform.',
+			'Created 2 Canva editing extensions. Refactored and optimized a React frontend for a small startup. Supported TargControl time tracking platform.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -123,17 +127,18 @@ Was integrated later as one of the routes for Metamask.`,
 		employerName: 'WEB Secret',
 		period: 'Oct 2018 - Nov 2018',
 		description:
-			'Built a POC DAO DApps on Ethereum (smart-contracts), React.js + web3.js and added test coverage on JavaScript with Mocha + Chai.',
+			'Built a POC DAO DApp on Ethereum smart-contracts, React.js, and Web3.js, and added test coverage on JavaScript with Mocha + Chai.',
 		shortDescription:
-			'Built a POC DAO DApps on Ethereum (smart-contracts), React.js + web3.js and added test coverage on JavaScript with Mocha + Chai.',
+			'Built a POC DAO DApp on Ethereum smart-contracts, React.js, and Web3.js, and added test coverage on JavaScript with Mocha + Chai.',
 	},
 	{
 		title: 'Ethereum Developer',
 		employerName: 'TechBüro',
 		period: 'Jan 2018 - Oct 2018',
-		description: `Used Ethereum stack technologies (Solidity, Truffle, web3.js, Geth, OpenZeppelin) as well as API building and communitating with Ethereum on both backend and frontend sides (Go, Node.js, React.js), conducted R&D about implementing new solutions to our needs (Loom, zk-SNARKs).
-- Created a set of smart-contracts for 2 internal projects,  which included working with security tokens (ERC1404) and expanding ideas of STO to our needs. Integrated smart-contracts interactions with Web3.js to AngularJs Front-end.
-- Created a prototype of prediction market platform based on Gnosis. The dApp would allow users to make predictions and back them up by tokens. From my side was issued a research on topic of Futarchy, prediction markets, project Gnosis and its competitors, and created a basic version of front-end interacting with IPFS and Gnosis’s smart-contracts.`,
+		description: `Used Ethereum stack technologies (Solidity, Truffle, web3.js, Geth, and OpenZeppelin) as well as API building and communicating with Ethereum on both backend and frontend sides (Go, Node.js, and React.js).
+- Created a set of smart-contracts for 2 internal projects, which included working with security tokens (ERC1404) and expanding ideas of STO to our needs. Integrated smart-contracts interactions with Web3.js to an AngularJs front-end.
+- Created a prototype of a prediction market platform based on Gnosis. The dApp would allow users to make predictions and back them up by tokens. From my side was issued a research on the topic of Futarchy, prediction markets, the Gnosis project and its competitors, and created a basic version of a front-end interacting with IPFS and Gnosis’s smart-contracts.
+- Conducted R&D about implementing new solutions to our needs (Loom and zk-SNARKs).`,
 		shortDescription:
 			'Created smart-contracts for 2 internal projects. Created multiple POC prototype apps. Integrated communications with Ethereum on both backend and frontend sides.',
 	},
@@ -145,36 +150,31 @@ export const education: Job[] = [
 		employerName: "Bachelor's degree, Informational Systems and Technologies",
 		period: '2015 - 2019',
 		description:
-			"Here I got fundamental knowledge of Relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, information security. Thanks to this, I've had my push towards learning deeply and enjoying this industry.",
+			"Gained fundamental knowledge of relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, and information security. Thanks to this, I've had my push towards learning deeply and enjoying this industry.",
 	},
 ];
 
 interface Course {
 	title: string;
 	url: string;
-	icon: string;
 }
 
 export const courses: Course[] = [
 	{
+		title: 'Udemy - The Complete Prompt Engineering for AI Bootcamp (2025)',
+		url: 'https://www.udemy.com/certificate/UC-727af2c1-e8aa-42fe-9abd-73dca217b376/',
+	},
+	{
 		title: 'Udemy - React 18 Tutorial and Projects Course (2023)',
 		url: 'https://www.udemy.com/certificate/UC-aad01ec0-c5b1-4b5e-85ed-a46d7e5b7beb/',
-		icon: 'courses/react',
 	},
 	{
 		title: "Udemy - Microfrontends with React: A Complete Developer's Guide",
 		url: 'https://www.udemy.com/certificate/UC-57d1fc52-921a-4476-9892-2c785fdd7741/',
-		icon: 'courses/react',
 	},
 	{
 		title: 'Udemy - AWS Serverless APIs & Apps - A Complete Introduction',
 		url: 'https://www.udemy.com/certificate/UC-95dc5377-2bf6-480a-a364-d5eef23e4e23/',
-		icon: 'courses/database',
-	},
-	{
-		title: 'Udemy - Serverless Framework Bootcamp: Node.js, AWS & Microservices',
-		url: 'https://www.udemy.com/certificate/UC-33886559-10e3-4aca-a032-2dd8f670480d/',
-		icon: 'courses/database',
 	},
 ];
 
