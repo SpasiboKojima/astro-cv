@@ -1,6 +1,6 @@
 ---
 import JobPosition from '~/components/pdf/JobPosition.astro';
-import { courses, education, jobs, languages, location, shortDescription, skills } from '~/data';
+import { courses, education, jobs, languages, location, position, shortDescription, skills } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 		<h1 class='h1 text-center'>Andrew Katsewich</h1>
 
 		<div class='mt-2 flex flex-wrap justify-center gap-1 text-sm'>
-			<div>Full Stack Developer</div>
+			<div>{position}</div>
 			<div class='divider divider-horizontal m-0'></div>
 			<div>{location}</div>
 		</div>
@@ -45,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		<div class='mt-6'>
 			<h2 class='h2 border-b border-gray-200'>COURSES</h2>
-			<ul class='mt-4 flex flex-col gap-2 font-semibold text-sm'>
+			<ul class='mt-4 flex flex-col gap-2 text-sm font-semibold'>
 				{
 					courses.map((course) => (
 						<a target='blank' class='link-hover link' href={course.url}>

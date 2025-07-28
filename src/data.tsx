@@ -6,13 +6,14 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
+export const position = 'Frontend Developer';
 export const shortDescription = `I am a software engineer with 7 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both projects where I was working as a part of a frontend team and projects which I setup and maintained on my own.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
 I prioritize lightweight, high-performance, and extensible solutions in development. I leverage AI tools such as Windsurf and GitHub Copilot for code completion and chat to enhance productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when opportunities arise.
 `;
-export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS', 'Wagmi', 'Ethers'];
+export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand', 'SolidJS', 'Web3'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
 export const skills = [

@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'astro/types';
 import { ClientRouter } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import ThemeIcon from '~/components/ThemeIcon.astro';
-import { jobs, location } from '~/data';
+import { jobs, location, position } from '~/data';
 import '~/font.css';
 import '~/index.css';
 
@@ -20,15 +20,15 @@ const { style } = Astro.props;
 		<ClientRouter />
 		<title>Andrew Katsewich's CV</title>
 		<meta property='title' content="Andrew Katsewich's CV" />
-		<meta name='description' content={`Andrew Katsewich, Full Stack Developer in ${location}, @${jobs[0].employerName}`} />
+		<meta name='description' content={`Andrew Katsewich, ${position} in ${location}, @${jobs[0].employerName}`} />
 		<meta property='og:title' content="Andrew Katsewich's CV" />
 		<meta property='og:type' content='website' />
 		<meta property='og:site_name' content='Vercel' />
 		<meta property='og:image' content='/og.png' />
-		<meta property='og:image:alt' content={`Andrew Katsewich, Full Stack Developer in ${location}, @${jobs[0].employerName}`} />
+		<meta property='og:image:alt' content={`Andrew Katsewich, ${position} in ${location}, @${jobs[0].employerName}`} />
 		<meta property='og:image:width' content='1200' />
 		<meta property='og:image:height' content='630' />
-		<meta property='og:description' content={`Andrew Katsewich, Full Stack Developer in ${location}, @${jobs[0].employerName}`} />
+		<meta property='og:description' content={`Andrew Katsewich, ${position} in ${location}, @${jobs[0].employerName}`} />
 		<meta property='og:url' content={`${process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : ''}`} />
 
 		<meta property='twitter:card' content='summary_large_image' />

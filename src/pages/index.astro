@@ -8,7 +8,7 @@ import GithubIcon from '~/assets/icons/github.svg';
 import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
 import PhotoImg from '~/assets/images/photo.png';
-import { articles, jobs, location, projects, description, skillsPrimary } from '~/data';
+import { articles, description, jobs, location, position, projects, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class='mt-1 pr-14'>
 					<h1 class='text-4xl font-semibold'>Andrew Katsewich</h1>
 					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-700'>
-						<div>Full Stack Developer</div>
+						<div>{position}</div>
 						<div class='flex items-center gap-1'>
 							<LocationIcon class='shrink-0' width={20} height={20} />
 							{location}

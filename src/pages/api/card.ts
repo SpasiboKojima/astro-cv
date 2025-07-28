@@ -1,5 +1,5 @@
 import { ImageResponse } from '@vercel/og';
-import { jobs, location } from '~/data';
+import { jobs, location, position } from '~/data';
 
 const getUrl = () => {
 	if (process.env.NODE_ENV === 'development') {
@@ -55,7 +55,7 @@ export async function GET() {
 						type: 'div',
 						props: {
 							tw: 'mb-auto mt-2 text-3xl text-gray-700',
-							children: 'Full Stack Developer',
+							children: position,
 						},
 					},
 					{
