@@ -184,6 +184,7 @@ export interface Project {
 	employerName: string;
 	period: string;
 	description: string;
+	shortDescription?: string;
 	skills: string[];
 	slug?: string;
 	url?: string;
@@ -219,6 +220,7 @@ My accomplishments:
 		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand', 'framer-motion'],
 		slug: 'infinity',
 		color: 'oklch(0.63 0.17 249.61)',
+		shortDescription:'Academy platform with various options for personalizing a plan, built on Next.js, React, NextAuth, Next-intl, Tailwind CSS, DaisyUI, and Zustand.',
 	},
 	{
 		title: 'Mocaptrade',
@@ -233,6 +235,7 @@ My accomplishments:
 		slug: 'marketplace',
 		color: 'oklch(0.52 0.24 275.78)',
 		url: 'https://mocaptrade.com/',
+		shortDescription: 'Marketplace for 3D animation animations, built on Next.js, React, Three.js, Zustand, and Tailwind CSS.',
 	},
 	{
 		title: 'D8X Website',
@@ -285,6 +288,7 @@ My accomplishments:
 		slug: 'starly',
 		color: 'oklch(0.57 0.27 295.45)',
 		url: 'https://starly.io/',
+		shortDescription: 'Launchpad and marketplace for gamified NFT collections, built on the FLOW blockchain, React, Redux, and Styled-components.',
 	},
 	{
 		title: 'Bored & Lucky',
@@ -301,6 +305,7 @@ My accomplishments:
 		slug: 'bored&lucky',
 		url: 'https://boredlucky.vercel.app/',
 		color: 'oklch(0.82 0.16 88.46)',
+		shortDescription: 'Ethereum-based NFT raffle platform, build on Next.js, Styled-components, and Wagmi.',
 	},
 	{
 		title: 'SwiftLoan',
@@ -357,6 +362,7 @@ My accomplishments:
 		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid', 'Web3.js'],
 		slug: 'totle',
 		color: 'oklch(0.65 0.16 244.05)',
+		shortDescription: 'Ethereum-based DEX built on React, Redux, and Typescript, with backoffice built with GraphQL, Node.js, and Typescript.',
 	},
 	{
 		title: 'TombCare',

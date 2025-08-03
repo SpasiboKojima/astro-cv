@@ -70,17 +70,20 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<h2 class='mb-7 text-xl font-medium'>Featured Projects</h2>
-			<div class='mb-4'>
+			<div class='mb-4 flex flex-col gap-2'>
 				{
 					projects.map(
 						(project) =>
 							project.slug && (
-								<a class='group link link-hover flex justify-between py-1 font-medium' href={`/p/${project.slug}`}>
-									<div class='max-w-1/2'>
-										{project.title}
-										<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+								<a class='group' href={`/p/${project.slug}`}>
+									<div class='flex justify-between py-1 font-medium'>
+										<div class='max-w-1/2'>
+											<h1 class='group-hover:underline inline'>{project.title}</h1>
+											<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+										</div>
+										<div>{project.period}</div>
 									</div>
-									<div>{project.period}</div>
+									<div class='dark:text-neutral-content/80 text-sm text-gray-700'>{project.shortDescription}</div>
 								</a>
 							)
 					)
