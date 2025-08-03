@@ -1,6 +1,5 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { ClientRouter } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import ThemeIcon from '~/components/ThemeIcon.astro';
 import { jobs, location, position } from '~/data';
@@ -17,7 +16,6 @@ const { style } = Astro.props;
 <!doctype html>
 <html lang='en'>
 	<head>
-		<ClientRouter />
 		<title>Andrew Katsewich's CV</title>
 		<meta property='title' content="Andrew Katsewich's CV" />
 		<meta name='description' content={`Andrew Katsewich, ${position} in ${location}, @${jobs[0].employerName}`} />
@@ -60,6 +58,10 @@ const { style } = Astro.props;
 
 	html[data-theme='dark'] {
 		background: #000;
+	}
+
+	@view-transition {
+		navigation: auto;
 	}
 
 	.background {
