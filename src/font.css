@@ -1,89 +1,80 @@
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 100;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Thin.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 200;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-UltraLight.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 300;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Light.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 400;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Regular.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 500;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Medium.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 600;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-SemiBold.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 700;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Bold.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 800;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-Black.woff2') format('woff2');
 }
-/* latin */
 @font-face {
 	font-family: 'Geist';
 	font-style: normal;
 	font-weight: 900;
-	font-display: block;
+	font-display: swap;
 	src:
 		local('Geist'),
 		url('/assets/fonts/Geist/Geist-UltraBlack.woff2') format('woff2');

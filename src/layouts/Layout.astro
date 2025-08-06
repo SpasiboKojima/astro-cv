@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'astro/types';
 import Footer from '~/components/Footer.astro';
 import ThemeIcon from '~/components/ThemeIcon.astro';
 import { jobs, location, position } from '~/data';
-import '~/font.css';
+import fontsStyles from '~/font.css?raw';
 import '~/index.css';
 
 interface Props {
@@ -49,6 +49,7 @@ const { style } = Astro.props;
 		<Footer />
 	</body>
 </html>
+<style set:html={fontsStyles}></style>
 <style is:global>
 	html {
 		scrollbar-gutter: stable;
