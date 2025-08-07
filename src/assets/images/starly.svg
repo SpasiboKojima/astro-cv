@@ -3,10 +3,10 @@
         <circle id="a" cx="21" cy="21" r="21"/>
     </defs>
     <g fill="none" fill-rule="evenodd">
-        <mask id="b" fill="#fff">
+        <mask id="starly-b" fill="#fff">
             <use xlink:href="#a"/>
         </mask>
-        <g mask="url(#b)" fill-rule="nonzero">
+        <g mask="url(#starly-b)" fill-rule="nonzero">
             <circle fill="#000" cx="21" cy="21" r="21"/>
             <path d="m17.109 19.717 2.563 2.516-.041-.001.041.041v-.04l2.556 2.56v8.157h-2.556V24.17L10.789 33H9v-1.848l8.921-8.92H9v-2.515h8.109zM22.228 9l-.001 8.927L31.212 9H33v1.848l-8.869 8.868 8.869.001v2.516h-8.109l-1.653-1.624-.013.014-.998-.998v.092l-2.555-2.56V9h2.556z" stroke="#FFF" fill="#FFF"/>
         </g>
