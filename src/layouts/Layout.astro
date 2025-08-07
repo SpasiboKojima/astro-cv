@@ -67,7 +67,7 @@ const { style } = Astro.props;
 
 	.background {
 		position: fixed;
-		inset: 0px;
+		inset: 0;
 		z-index: -1;
 
 		--adjusted-color: oklch(from var(--background-color) l c h / 0.25);
@@ -82,3 +82,11 @@ const { style } = Astro.props;
 		background-image: radial-gradient(var(--adjusted-color, oklch(0.2 0.08 257)), oklch(0 0 0) 90%);
 	}
 </style>
+<script>
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 't') {
+			const themeToggle = document.getElementById('themeToggle');
+			themeToggle?.click();
+		}
+	});
+</script>
