@@ -5,6 +5,7 @@
       "dependencies": {
         "@astrojs/check": "^0.9.4",
         "@astrojs/solid-js": "5.1.0",
+        "@spasibokojima/medium-zoom": "^1.1.1",
         "@tailwindcss/vite": "4.1.0",
         "@vercel/og": "^0.6.8",
         "astro": "5.7.14",
@@ -277,6 +278,8 @@
     "@shikijs/vscode-textmate": ["@shikijs/vscode-textmate@10.0.2", "", {}, "sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg=="],
 
     "@shuding/opentype.js": ["@shuding/opentype.js@1.4.0-beta.0", "", { "dependencies": { "fflate": "^0.7.3", "string.prototype.codepointat": "^0.2.1" }, "bin": { "ot": "bin/ot" } }, "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA=="],
+
+    "@spasibokojima/medium-zoom": ["@spasibokojima/medium-zoom@1.1.1", "", {}, "sha512-7wHOnobFQPYHGeREnpeIDrsgQ8ICuVNIvgw4jcYpEhR68qw0dTB/qmoxUULBIBn310BYj3wSqo6IV/HYwL9CFw=="],
 
     "@swc/helpers": ["@swc/helpers@0.5.17", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A=="],
 
