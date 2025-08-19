@@ -85,7 +85,7 @@ export function ImageZoom(props: ImageZoomProps) {
 			onClick={(e) => {
 				// e.preventDefault();
 				// e.stopPropagation();
-				// e.stopImmediatePropagation();
+				e.stopImmediatePropagation();
 
 				if (!imgRef) return;
 
