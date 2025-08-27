@@ -25,10 +25,10 @@ export default function ProjectImages(props: ProjectImagesProps) {
 		}
 
 		document.addEventListener('keydown', changeImage);
-	});
 
-	onCleanup(() => {
-		document.removeEventListener('keydown', changeImage);
+		onCleanup(() => {
+			document.removeEventListener('keydown', changeImage);
+		});
 	});
 
 	const preloadImage = (imgRef: HTMLImageElement, setIsLoading: (value: boolean) => void, index: number) => {
