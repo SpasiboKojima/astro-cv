@@ -1,4 +1,4 @@
-import { createSignal, For, onMount, type JSXElement } from 'solid-js';
+import { createSignal, For, onCleanup, onMount, type JSXElement } from 'solid-js';
 import { testImgLoaded, type ImageOpts } from '~/lib/image';
 import { getZoom, ImageZoom } from './ImageZoom';
 import LoadingSpinner from './LoadingSpinner';
@@ -23,6 +23,12 @@ export default function ProjectImages(props: ProjectImagesProps) {
 		} else {
 			zoom.detach();
 		}
+
+		document.addEventListener('keydown', changeImage);
+	});
+
+	onCleanup(() => {
+		document.removeEventListener('keydown', changeImage);
 	});
 
 	const preloadImage = (imgRef: HTMLImageElement, setIsLoading: (value: boolean) => void, index: number) => {
@@ -93,7 +99,7 @@ export default function ProjectImages(props: ProjectImagesProps) {
 
 	return (
 		<>
-			<div class="grid gap-4 md:grid-cols-2" onkeydown={changeImage}>
+			<div class="grid gap-4 md:grid-cols-2">
 				<For each={props.images} fallback={<div>Loading...</div>}>
 					{(item, index) => (
 						<ImageZoom
