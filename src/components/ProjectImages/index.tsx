@@ -19,7 +19,7 @@ export default function ProjectImages(props: ProjectImagesProps) {
 		const zoom = getZoom();
 		if (!zoom) return;
 
-		if (imgRefs) {
+		if (imgRefs.length > 0) {
 			zoom.attach(imgRefs.filter((el) => el !== undefined) as HTMLElement[]);
 		} else {
 			zoom.detach();

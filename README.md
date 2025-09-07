@@ -1,6 +1,8 @@
 # My Personal Page
 [andrew-k.vercel.app](https://andrew-k.vercel.app/)
 
+The app uses [Medium Zoom Next](https://github.com/SpasiboKojima/medium-zoom-next/), my version of a library for image zooming. You can see it in action on project pages, with the code for it in [here](/src/components/ProjectImages/).
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
