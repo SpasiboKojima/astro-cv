@@ -37,3 +37,5 @@ const generateImageVariants = async (image: ImageImport) => {
 };
 
 export const generateImages = async (imports: ImageImport[]) => Promise.all(imports.map((image) => generateImageVariants(image)));
+
+export const testImgLoaded = (el: HTMLImageElement) => el.complete && el.naturalHeight !== 0;
