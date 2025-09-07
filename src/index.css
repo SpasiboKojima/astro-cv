@@ -20,7 +20,7 @@
 @theme {
 	--font-geist: 'Geist', Arial;
 
-	--animate-fade-in: fade-in 0.3s forwards;
+	--animate-fade-in: fade-in 0.3s forwards 0.5s;
 	@keyframes fade-in {
 		0% {
 			opacity: 0;

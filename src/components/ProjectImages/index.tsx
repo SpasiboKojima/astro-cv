@@ -1,3 +1,4 @@
+import 'medium-zoom-next/dist/style.css';
 import { createSignal, For, onCleanup, onMount, type JSXElement } from 'solid-js';
 import { testImgLoaded, type ImageOpts } from '~/lib/image';
 import { getZoom, ImageZoom } from './ImageZoom';

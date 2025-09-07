@@ -1,8 +1,8 @@
+import mediumZoom, { type Zoom } from 'medium-zoom-next';
 import type { JSX } from 'solid-js';
 import { createSignal, For, splitProps } from 'solid-js';
 import type { DOMElement } from 'solid-js/jsx-runtime';
 import type { ImageOpts } from '~/lib/image';
-import mediumZoom, { type Zoom } from '~/lib/medium-zoom';
 import LoadingSpinner from './LoadingSpinner';
 
 let zoomRef: Zoom;
