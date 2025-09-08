@@ -14,7 +14,7 @@ export async function GET() {
 	let fontData: ArrayBuffer | null = null;
 	try {
 		fontData = await (await font).arrayBuffer();
-	} catch(err) {
+	} catch (err) {
 		console.log('err :>> ', err, fontData);
 	}
 
@@ -38,9 +38,9 @@ export async function GET() {
 					{
 						type: 'img',
 						props: {
-							src: `${getUrl()}/assets/epam.png`,
-							width: jobs[0].employeeImg?.width,
-							height: jobs[0].employeeImg?.height,
+							src: `${getUrl()}/assets/coherent.png`,
+							width: 160,
+							height: 160,
 							tw: 'mt-auto',
 						},
 					},

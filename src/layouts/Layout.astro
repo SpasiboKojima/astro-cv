@@ -87,8 +87,7 @@ const { style } = Astro.props;
 <script>
 	document.addEventListener('keydown', (event) => {
 		if (event.key === 't') {
-			const themeToggle = document.getElementById('themeToggle');
-			themeToggle?.click();
+			document.getElementById('themeToggle')?.click();
 		}
 	});
 </script>

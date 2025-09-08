@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import CreativeITImg from '~/assets/images/employers/creativeit.jpeg';
 import EPAMImg from '~/assets/images/employers/epam.png';
+import CoherentImg from '~/assets/images/employers/coherent.jpg';
 import TargsoftImg from '~/assets/images/employers/targsoft.jpeg';
 import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
@@ -66,10 +67,18 @@ export interface Job {
 export const jobs: Job[] = [
 	{
 		title: 'Frontend Web Developer',
+		employeeImg: CoherentImg,
+		employerName: 'Coherent Solutions',
+		period: 'Sep 2025 - Present',
+		description: '',
+		shortDescription: '',
+	},
+	{
+		title: 'Frontend Web Developer',
 		employeeImg: EPAMImg,
 		employerName: 'EPAM',
-		period: 'Jan 2025 - Present',
-		description: `- Migrated 2 websites for a big enterprise client's brands using Next.js;
+		period: 'Jan 2025 - Aug 2025',
+		description: `- Accurately migrated 2 websites with all bugs and issues for a big enterprise client's brands using Next.js;
 - Set a standard on how to setup and use TailwindCSS correctly;
 - Taught 2 Lead developers how to use ESLint.`,
 		shortDescription:
@@ -220,7 +229,8 @@ My accomplishments:
 		skills: ['Next.js', 'React', 'NextAuth', 'Next-intl', 'React Hook Form', 'Tailwind CSS', 'DaisyUI', 'Zustand', 'framer-motion'],
 		slug: 'infinity',
 		color: 'oklch(0.63 0.17 249.61)',
-		shortDescription:'Academy platform with various options for personalizing a plan, built on Next.js, React, NextAuth, Next-intl, Tailwind CSS, DaisyUI, and Zustand.',
+		shortDescription:
+			'Academy platform with various options for personalizing a plan, built on Next.js, React, NextAuth, Next-intl, Tailwind CSS, DaisyUI, and Zustand.',
 	},
 	{
 		title: 'Mocaptrade',
@@ -288,7 +298,8 @@ My accomplishments:
 		slug: 'starly',
 		color: 'oklch(0.57 0.27 295.45)',
 		url: 'https://starly.io/',
-		shortDescription: 'Launchpad and marketplace for gamified NFT collections, built on the FLOW blockchain, React, Redux, and Styled-components.',
+		shortDescription:
+			'Launchpad and marketplace for gamified NFT collections, built on the FLOW blockchain, React, Redux, and Styled-components.',
 	},
 	{
 		title: 'Bored & Lucky',
@@ -362,7 +373,8 @@ My accomplishments:
 		skills: ['React', 'Redux', 'Typescript', 'GraphQL', 'Flexbox Grid', 'Web3.js'],
 		slug: 'totle',
 		color: 'oklch(0.65 0.16 244.05)',
-		shortDescription: 'Ethereum-based DEX built on React, Redux, and Typescript, with backoffice built with GraphQL, Node.js, and Typescript.',
+		shortDescription:
+			'Ethereum-based DEX built on React, Redux, and Typescript, with backoffice built with GraphQL, Node.js, and Typescript.',
 	},
 	{
 		title: 'TombCare',
