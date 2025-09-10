@@ -56,7 +56,6 @@ const { style } = Astro.props;
 	html {
 		scrollbar-gutter: stable;
 		font-family: system-ui, sans-serif;
-		background-color: #fff;
 	}
 
 	html[data-theme='dark'] {
@@ -88,6 +87,7 @@ const { style } = Astro.props;
 	document.addEventListener('keydown', (event) => {
 		if (event.key === 't') {
 			document.getElementById('themeToggle')?.click();
+			localStorage.setItem('isThemePressed', 'true');
 		}
 	});
 </script>

@@ -8,6 +8,7 @@ import GithubIcon from '~/assets/icons/github.svg';
 import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
 import PhotoImg from '~/assets/images/photo.png';
+import { KeyHints } from '~/components/KeyHints';
 import { articles, description, jobs, location, position, projects, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -141,4 +142,12 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</main>
+
+	<KeyHints
+		client:load
+		hints={[{ key: 'T', description: 'Change Theme' }]}
+		isRender={true}
+		storageKey='isThemePressed'
+		animationDelay='5s'
+	/>
 </Layout>

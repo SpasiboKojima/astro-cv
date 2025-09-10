@@ -1,6 +1,7 @@
 import 'medium-zoom-next/dist/style.css';
 import { createSignal, For, onCleanup, onMount, type JSXElement } from 'solid-js';
 import { testImgLoaded, type ImageOpts } from '~/lib/image';
+import { KeyHints } from '../KeyHints';
 import { getZoom, ImageZoom } from './ImageZoom';
 import LoadingSpinner from './LoadingSpinner';
 
@@ -12,6 +13,7 @@ interface ProjectImagesProps {
 export default function ProjectImages(props: ProjectImagesProps) {
 	const [selectedIndex, setSelectedIndex] = createSignal<number | null>(null);
 	const [isLoading, setIsLoading] = createSignal(false);
+	const [isImageClicked, setIsImageClicked] = createSignal(false);
 
 	const imgRefs: (HTMLImageElement | undefined)[] = [];
 
@@ -69,6 +71,8 @@ export default function ProjectImages(props: ProjectImagesProps) {
 		if (!imgRef) return;
 		await preloadImage(imgRef, setIsLoading, index);
 		getZoom().change({ target: imgRef });
+
+		localStorage.setItem('isImageChanged', 'true');
 	};
 
 	function changeImage(e: KeyboardEvent) {
@@ -88,6 +92,8 @@ export default function ProjectImages(props: ProjectImagesProps) {
 
 	const onClickHandler = async (e: MouseEvent, setIsLoading: (value: boolean) => void, index: number) => {
 		e.stopPropagation();
+
+		setIsImageClicked(true);
 
 		setSelectedIndex(index);
 		const imgRef = imgRefs[index];
@@ -123,6 +129,13 @@ export default function ProjectImages(props: ProjectImagesProps) {
 			</div>
 
 			<LoadingSpinner isLoading={isLoading} />
+
+			<KeyHints
+				hints={[{ key: ['←', '→'], description: 'Change zoomed image' }]}
+				isRender={isImageClicked()}
+				storageKey="isImageChanged"
+				animationDelay='3s'
+			/>
 		</>
 	);
 }
