@@ -76,7 +76,7 @@ import Layout from '../layouts/Layout.astro';
 					projects.map(
 						(project) =>
 							project.slug && (
-								<a class='group' href={`/p/${project.slug}`}>
+								<a class='group' href={`/p/${project.slug}`} data-astro-prefetch>
 									<div class='flex justify-between py-1 font-medium'>
 										<div class='max-w-1/2'>
 											<h1 class='inline group-hover:underline'>{project.title}</h1>
@@ -93,6 +93,7 @@ import Layout from '../layouts/Layout.astro';
 			<a
 				href='/projects'
 				class='group link link-hover dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-700'
+				data-astro-prefetch
 			>
 				Full Projects List
 				<ArrowMoveLeftIcon class='stroke-base-content size-3 rotate-180 transition-transform group-hover:translate-x-1' />
