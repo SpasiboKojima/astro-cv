@@ -9,7 +9,7 @@ import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
 import PhotoImg from '~/assets/images/photo.png';
 import { KeyHints } from '~/components/KeyHints';
-import { articles, description, jobs, location, position, projects, skillsPrimary } from '~/data';
+import { articles, description, jobs, location, personalDevelopments, position, projects, skillsPrimary } from '~/data';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -79,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
 								<a class='group' href={`/p/${project.slug}`} data-astro-prefetch>
 									<div class='flex justify-between py-1 font-medium'>
 										<div class='max-w-1/2'>
-											<h1 class='inline group-hover:underline'>{project.title}</h1>
+											<h3 class='inline group-hover:underline'>{project.title}</h3>
 											<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 										</div>
 										<div>{project.period}</div>
@@ -131,16 +131,34 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<h2 class='mb-7 text-xl font-medium'>Articles</h2>
-			<div class='flex flex-col gap-2'>
+			<div class='mb-14 flex flex-col gap-2'>
 				{
-					articles.map((project) => (
-						<a class='group link link-hover py-1 font-medium' href={project.slug}>
-							{project.title}
+					articles.map((article) => (
+						<a class='group link link-hover py-1 font-medium' href={article.url} target='_blank' rel='noopener noreferrer'>
+							{article.title}
 							<ArrowUpRight class='dark:text-neutral-content/80 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 						</a>
 					))
 				}
 			</div>
+		</div>
+
+		<h2 class='mb-7 text-xl font-medium'>Personal Developments</h2>
+		<div class='flex flex-col gap-2'>
+			{
+				personalDevelopments.map((development) => (
+					<a class='group' href={development.url} target='_blank' rel='noopener noreferrer'>
+						<div class='flex justify-between py-1 font-medium'>
+							<div class='max-w-1/2'>
+								<h3 class='inline group-hover:underline'>{development.title}</h3>
+								<ArrowUpRight class='dark:text-neutral-content/75 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+							</div>
+							<div>{development.period}</div>
+						</div>
+						<div class='dark:text-neutral-content/80 text-sm text-gray-700'>{development.shortDescription}</div>
+					</a>
+				))
+			}
 		</div>
 	</main>
 

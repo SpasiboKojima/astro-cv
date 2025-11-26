@@ -401,20 +401,42 @@ My accomplishments:
 
 interface Article {
 	title: string;
-	slug: string;
+	url: string;
 }
 
 export const articles: Article[] = [
 	{
 		title: '7 Easy UX Improvements for your Webapp',
-		slug: 'https://dev.to/thanksboss/7-easy-ux-improvements-for-your-webapp-4mia',
+		url: 'https://dev.to/thanksboss/7-easy-ux-improvements-for-your-webapp-4mia',
 	},
 	{
 		title: 'Anticipating User Errors in Web',
-		slug: 'https://dev.to/thanksboss/anticipating-user-errors-in-web-3nbc',
+		url: 'https://dev.to/thanksboss/anticipating-user-errors-in-web-3nbc',
 	},
 	{
 		title: 'Fixing Target Size or A Fat Finger Problem',
-		slug: 'https://dev.to/thanksboss/fixing-target-area-or-a-fat-finger-problem-1fe8',
+		url: 'https://dev.to/thanksboss/fixing-target-area-or-a-fat-finger-problem-1fe8',
+	},
+];
+
+interface Development {
+	title: string;
+	period: string;
+	shortDescription: string;
+	url: string;
+}
+
+export const personalDevelopments: Development[] = [
+	{
+		title: 'TBD',
+		period: 'Oct 2025 - Present',
+		shortDescription: 'React Native app',
+		url: 'https://github.com/SpasiboKojima/team-up',
+	},
+	{
+		title: 'Medium Zoom Next',
+		period: 'Aug 2025 - Sep 2025',
+		shortDescription: 'A modernized version of the JavaScript library for zooming images like in Medium',
+		url: 'https://github.com/SpasiboKojima/medium-zoom-next',
 	},
 ];
