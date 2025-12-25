@@ -8,11 +8,11 @@ import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
 export const position = 'Frontend Developer';
-export const shortDescription = `I am a software engineer with 7 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both projects where I was working as a part of a frontend team and projects which I setup and maintained on my own.
+export const shortDescription = `I am a software engineer with 7 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both those where I was working as a part of a frontend team and the ones I setup and maintained on my own.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
-I prioritize lightweight, high-performance, and extensible solutions in development. I leverage AI tools such as Windsurf and GitHub Copilot for code completion and chat to enhance productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when opportunities arise.
+In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when there's a need.
 `;
 export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand', 'SolidJS', 'Web3'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
@@ -33,6 +33,7 @@ export const skills = [
 			'GraphQL',
 			'SolidJS',
 			'Astro',
+			'React Native',
 		],
 	},
 	{
@@ -41,7 +42,7 @@ export const skills = [
 	},
 	{
 		title: 'Back-end',
-		skills: ['Node.js', 'Express', 'Firebase'],
+		skills: ['Node.js', 'Express', 'Firebase', 'Convex'],
 	},
 	{
 		title: 'Databases',
@@ -431,7 +432,7 @@ export const personalDevelopments: Development[] = [
 		title: 'TBD',
 		period: 'Oct 2025 - Present',
 		shortDescription: 'React Native app',
-		url: 'https://github.com/SpasiboKojima/team-up',
+		url: 'https://team-up.social/',
 	},
 	{
 		title: 'Medium Zoom Next',
