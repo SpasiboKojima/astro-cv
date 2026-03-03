@@ -8,13 +8,13 @@ import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
 export const position = 'Frontend Developer';
-export const shortDescription = `I am a software engineer with 7 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both those where I was working as a part of a frontend team and the ones I setup and maintained on my own.
+export const shortDescription = `I am a software engineer with 8 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both those where I was working as a part of a frontend team and the ones I setup and maintained on my own.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
 In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when there's a need.
 `;
-export const skillsPrimary = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand', 'SolidJS', 'Web3'];
+export const skillsPrimary = ['React', 'Next.js', 'React Native', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand', 'SolidJS'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
 export const skills = [
@@ -23,17 +23,17 @@ export const skills = [
 		skills: [
 			'React',
 			'Next.js',
+			'React Native',
 			'TypeScript',
 			'JavaScript',
-			'Zustand',
-			'Redux',
 			'Tailwind CSS',
 			'DaisyUI',
 			'Styled-components',
+			'Zustand',
+			'Redux',
 			'GraphQL',
 			'SolidJS',
 			'Astro',
-			'React Native',
 		],
 	},
 	{
@@ -42,7 +42,7 @@ export const skills = [
 	},
 	{
 		title: 'Back-end',
-		skills: ['Node.js', 'Express', 'Firebase', 'Convex'],
+		skills: ['Convex', 'Node.js', 'Express', 'Firebase'],
 	},
 	{
 		title: 'Databases',
@@ -203,9 +203,31 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		title: 'NDA',
+		employerName: 'Coherent Solutions',
+		period: 'Jan 2026 - Mar 2026',
+		description: `A platform that makes it easy to set up and run investment vehicles (e.g. special purpose vehicle - SPV) and to invest in good offerings without having to worry about paperwork, compliance, or operational hassles. The investments are made into a variety of assets including real estate assets.
+		
+		- Contributed to finishing multiple sprints on time by completing necessary features
+		- Implemented Payment profiles feature as part of the investment process`,
+		skills: ['React', 'ChakraUI', 'Zustand', 'Tanstack-Query', 'Tanstack-Router'],
+	},
+	{
+		title: 'NDA',
+		employerName: 'Coherent Solutions',
+		period: 'Sep 2025 - Oct 2025',
+		description: `The project syncs your wallets across chains to surface accurate gains, losses, and liabilities, so tax season never sneaks up on you.
+		
+		- Refactored a big chunk of front-end code to better fit modern standards, be more reusable and clearer
+		- Adapted already existing desktop app to mobile screens
+		- Updated browser extension to implement the new designs and backend API schema
+`,
+		skills: ['React', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'Jotai'],
+	},
+	{
 		title: 'Set of brand websites',
 		employerName: 'EPAM',
-		period: 'Jan 2025 - Present',
+		period: 'Jan 2025 - Aug 2025',
 		description: 'Working on migrating a set of websites for a big enterprise client to Next.js.',
 		skills: ['Next.js', 'React', 'Tailwind CSS', 'shadcn/ui'],
 	},

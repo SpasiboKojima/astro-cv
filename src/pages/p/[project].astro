@@ -2,6 +2,7 @@
 import type { ImageMetadata } from 'astro';
 import ArrowMoveLeftIcon from '~/assets/icons/arrowMoveLeft.svg';
 import ArrowUpRight from '~/assets/icons/arrowUpRight.svg';
+import BackButton from '~/components/BackButton.astro';
 import ProjectImages from '~/components/ProjectImages';
 import { projects } from '~/data';
 import { generateImages } from '~/lib/image';
@@ -35,13 +36,8 @@ const imageOpts = await generateImages(projectImages);
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
 		</a>
 
-		<a
-			href='/'
-			class='group btn btn-circle border-base-content fixed bottom-8 left-8 z-20 flex size-auto items-center border p-4 lg:hidden'
-			aria-label='Back to Home page'
-		>
-			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform group-hover:-translate-x-1' />
-		</a>
+		<BackButton />
+
 		<div class='m-auto max-w-prose'>
 			<h1 class='mb-6 pr-14 text-4xl font-semibold'>{title}</h1>
 

@@ -5,7 +5,7 @@
 <button
 	aria-label='Toggle theme'
 	id='themeToggle'
-	class='swap absolute top-8 right-4 z-20 -mt-4 origin-top-right p-4 transition-transform hover:scale-150 lg:fixed lg:p-8 lg:-mt-8 lg:top-0 lg:right-0'
+	class='swap absolute top-8 right-4 z-20 -mt-4 origin-top-right p-4 transition-transform hover:scale-150 lg:fixed lg:top-0 lg:right-0 lg:-mt-8 lg:p-8'
 >
 	<div class='sun size-5 border-7 border-white bg-black'></div>
 
@@ -44,19 +44,24 @@
 
 	window.localStorage.setItem('theme', theme);
 
-	const handleToggleClick = () => {
-		const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-		localStorage.setItem('theme', !isDark ? 'dark' : 'light');
-
-		document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-	};
-
-	document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
-
 	document.addEventListener('astro:after-swap', function () {
 		const isDark = localStorage.getItem('theme') === 'dark';
 		document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
 
 		document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
 	});
+</script>
+<script>
+	import { WebHaptics, defaultPatterns } from 'web-haptics';
+	const haptics = new WebHaptics();
+
+	const handleToggleClick = () => {
+		const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+		localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+		haptics.trigger(defaultPatterns.soft);
+
+		document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+	};
+
+	document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
 </script>
