@@ -7,6 +7,7 @@ import EmailIcon from '~/assets/icons/email.svg';
 import GithubIcon from '~/assets/icons/github.svg';
 import LinkedinIcon from '~/assets/icons/linkedin.svg';
 import LocationIcon from '~/assets/icons/location.svg';
+import HammerIcon from '~/assets/icons/hammer.svg';
 import PhotoImg from '~/assets/images/photo.png';
 import { KeyHints } from '~/components/KeyHints';
 import { articles, description, jobs, location, personalDevelopments, position, projects, skillsPrimary } from '~/data';
@@ -21,9 +22,12 @@ import Layout from '../layouts/Layout.astro';
 				<div class='mt-1 pr-14'>
 					<h1 class='text-4xl font-semibold'>Andrew Katsewich</h1>
 					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-700'>
-						<div>{position}</div>
 						<div class='flex items-center gap-1'>
-							<LocationIcon class='shrink-0' width={20} height={20} />
+							<HammerIcon class='shrink-0' width={16} height={16} />
+							{position}
+						</div>
+						<div class='flex items-center gap-1'>
+							<LocationIcon class='shrink-0' width={16} height={16} />
 							{location}
 						</div>
 					</div>
@@ -33,7 +37,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class='mb-14'>
 				<div class='flex'>
 					<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
-					<div class='divider divider-horizontal !h-40 self-center'></div>
+					<div class='divider divider-horizontal h-40! self-center'></div>
 					<div class='flex flex-col justify-center gap-4'>
 						<a
 							class='-m-2 p-2 transition-transform hover:scale-125'
