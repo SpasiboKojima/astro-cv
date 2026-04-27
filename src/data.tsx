@@ -7,14 +7,14 @@ import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
-export const position = 'Frontend Developer';
+export const position = 'Web & Mobile Developer';
 export const shortDescription = `I am a software engineer with 8 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both those where I was working as a part of a frontend team and the ones I setup and maintained on my own.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
 In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when there's a need.
 `;
-export const skillsPrimary = ['React', 'Next.js', 'React Native', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand', 'SolidJS'];
+export const skillsPrimary = ['React', 'Next.js', 'React Native', 'Convex', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
 export const skills = [
@@ -451,9 +451,9 @@ interface Development {
 
 export const personalDevelopments: Development[] = [
 	{
-		title: 'TBD',
-		period: 'Oct 2025 - Present',
-		shortDescription: 'React Native app',
+		title: 'Team Up',
+		period: 'Oct 2025 - Apr 2026',
+		shortDescription: 'A platform for organizing and discovering social events of any kind.',
 		url: 'https://team-up.social/',
 	},
 	{
