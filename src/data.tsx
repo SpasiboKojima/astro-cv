@@ -71,7 +71,8 @@ export const jobs: Job[] = [
 		employeeImg: CoherentImg,
 		employerName: 'Coherent Solutions',
 		period: 'Sep 2025 - Present',
-		description: '',
+		description: `- Refactored and updated to new designs a web app and a browser extension for a tax management platform to modern level in all aspects;
+		- Contributed to finishing multiple sprints on time by completing necessary features for a real estate investment platform.`,
 		shortDescription: '',
 	},
 	{
@@ -99,23 +100,24 @@ export const jobs: Job[] = [
 - Created a multistep app for purchasing products with lots of customization options for vendors, authentication, internationalization, and multiple payment providers;
 - Created an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
 
+
 Also:
 - Mentored a less experienced developer to speed up the onboarding process;
-- Conducted a dozen technical interviews.`,
+- Conducted a dozen of technical interviews.`,
 		shortDescription:
 			'Created a total of 8 projects with React and Next.js, and contributed to team growth through mentoring and conducting technical interviews.',
 	},
-	{
-		title: 'Frontend Web Developer',
-		employeeImg: TargsoftImg,
-		employerName: 'TargSoft',
-		period: 'Jul 2020 - Aug 2021',
-		description: ` - Created 2 Canva editing extensions (Javascript);
-- Refactored and optimized a React frontend for a small startup;
-- Supported TargControl time tracking platform (Angular 11 & Typescript).`,
-		shortDescription:
-			'Created 2 Canva editing extensions. Refactored and optimized a React frontend for a small startup. Supported TargControl time tracking platform.',
-	},
+// 	{
+// 		title: 'Frontend Web Developer',
+// 		employeeImg: TargsoftImg,
+// 		employerName: 'TargSoft',
+// 		period: 'Jul 2020 - Aug 2021',
+// 		description: ` - Created 2 Canva editing extensions (Javascript);
+// - Refactored and optimized a React frontend for a small startup;
+// - Supported TargControl time tracking platform (Angular 11 & Typescript).`,
+// 		shortDescription:
+// 			'Created 2 Canva editing extensions. Refactored and optimized a React frontend for a small startup. Supported TargControl time tracking platform.',
+// 	},
 	{
 		title: 'Frontend Web Developer',
 		employeeImg: TotleImg,
@@ -429,6 +431,10 @@ interface Article {
 
 export const articles: Article[] = [
 	{
+		title: 'Lessons from building a social events platform - Team Up | Expo & Convex',
+		url: 'https://dev.to/thanksboss/lessons-from-building-a-social-events-platform-team-up-expo-convex-4228',
+	},
+	{
 		title: '7 Easy UX Improvements for your Webapp',
 		url: 'https://dev.to/thanksboss/7-easy-ux-improvements-for-your-webapp-4mia',
 	},
@@ -452,7 +458,7 @@ interface Development {
 export const personalDevelopments: Development[] = [
 	{
 		title: 'Team Up',
-		period: 'Oct 2025 - Apr 2026',
+		period: 'Oct 2025 - May 2026',
 		shortDescription: 'A platform for organizing and discovering social events of any kind.',
 		url: 'https://team-up.social/',
 	},

@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.2.2",
 		"@types/node": "^22.17.2",
-		"daisyui": "5.1.32",
+		"daisyui": "5.5.19",
 		"prettier": "^3.7.4",
 		"prettier-plugin-tailwindcss": "^0.6.14"
 	}

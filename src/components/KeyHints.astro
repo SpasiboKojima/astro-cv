@@ -1,0 +1,51 @@
+---
+interface KeyHint {
+	key: string | string[];
+	description: string;
+}
+
+interface Props {
+	hints: KeyHint[];
+	storageKey: string;
+	animationDelay?: string;
+	isRender?: boolean;
+}
+
+const { hints, storageKey, animationDelay } = Astro.props;
+// Localstorage is server only
+const isRender = localStorage.getItem(storageKey) === 'true' && Astro.props.isRender;
+---
+
+{
+	isRender && (
+		<div
+			id='hotkeyToast'
+			class='toast bottom-16 hidden animate-[appear_.6s_forwards] opacity-0 lg:block'
+			style={{ 'animation-delay': animationDelay ?? '3s' }}
+		>
+			<div class='alert alert-info text-base-content bg-base-100 flex flex-col border border-gray-300 dark:border-gray-700'>
+				{hints.map((hint) => (
+					<span class='flex items-center'>
+						{Array.isArray(hint.key) ? (
+							hint.key.map((key) => <kbd class='kbd not-first:ml-2'>{key}</kbd>)
+						) : (
+							<kbd class='kbd'>{hint.key}</kbd>
+						)}
+						<span class='ml-4'> -⠀{hint.description}</span>
+					</span>
+				))}
+			</div>
+		</div>
+	)
+}
+
+<script is:inline define:vars={{ isRender }}>
+	if (isRender) {
+		setTimeout(() => {
+			const hotkeyToast = document.getElementById('hotkeyToast');
+			hotkeyToast?.classList.remove('animate-[appear_.6s_forwards]', 'opacity-0');
+			void hotkeyToast.offsetWidth;
+			hotkeyToast?.classList.add('animate-[appear_.6s_forwards_reverse]');
+		}, 15000);
+	}
+</script>

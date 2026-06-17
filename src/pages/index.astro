@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
 					<div class='divider divider-horizontal h-40! self-center'></div>
 					<div class='flex flex-col justify-center gap-4'>
 						<a
-							class='-m-2 p-2 transition-transform hover:scale-125'
+							class='-m-2 p-2 transition-transform origin-bottom hover:scale-125'
 							aria-label='LinkedIn page'
 							href='https://www.linkedin.com/in/andrew-katsewich/'
 							target='blank'
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
 							<EmailIcon class='text-base-content size-6' />
 						</a>
 						<a
-							class='-m-2 p-2 transition-transform hover:scale-125'
+							class='-m-2 p-2 transition-transform origin-top hover:scale-125'
 							aria-label='Github profile'
 							href='https://github.com/SpasiboKojima'
 							target='blank'
@@ -94,30 +94,20 @@ import Layout from '../layouts/Layout.astro';
 					)
 				}
 			</div>
+
+			<!-- <div class='mb-14 grid grid-cols-2 gap-4'> -->
+			<!-- <div class='mb-14 flex flex-wrap gap-4'> -->
+			<!-- {projects.map((project) => project.slug && <ProjectCard project={project} />)} -->
+			<!-- </div> -->
+
 			<a
 				href='/projects'
-				class='group link link-hover dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-700'
+				class='group link link-hover link-primary dark:text-neutral-content/80 mb-14 flex items-center justify-end gap-1 py-1 text-gray-700'
 				data-astro-prefetch
 			>
 				Full Projects List
 				<ArrowMoveLeftIcon class='stroke-base-content size-3 rotate-180 transition-transform group-hover:translate-x-1' />
 			</a>
-
-			<!-- <div class='flex gap-4 mb-14'>
-				<a href='/project'>
-					<div class='w-[17.8rem] h-[26rem] bg-slate-500 p-4 flex flex-col'>
-						<p>INFINITY Webshop</p>
-						<Image src={ProjectImg} alt='face profile' class='h-40 w-full rounded object-cover mt-auto mx-auto' />
-					</div>
-				</a>
-
-				<a href='/project'>
-					<div class='w-[17.8rem] h-[26rem] bg-slate-500 p-4 flex flex-col'>
-						<p>INFINITY Webshop</p>
-						<Image src={ProjectImg} alt='face profile' class='h-40 w-full rounded object-cover mt-auto mx-auto' />
-					</div>
-				</a>
-			</div> -->
 
 			<h2 class='mb-7 text-xl font-medium'>Work History</h2>
 			<div class='mb-14 flex flex-col gap-2'>
@@ -138,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class='mb-14 flex flex-col gap-2'>
 				{
 					articles.map((article) => (
-						<a class='group link link-hover py-1 font-medium' href={article.url} target='_blank' rel='noopener noreferrer'>
+						<a class='group link link-hover link-primary py-1 font-medium' href={article.url} target='_blank' rel='noopener noreferrer'>
 							{article.title}
 							<ArrowUpRight class='dark:text-neutral-content/80 -mb-1 inline size-4 text-gray-700 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
 						</a>
@@ -151,6 +141,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class='flex flex-col gap-2'>
 			{
 				personalDevelopments.map((development) => (
+					// TODO: Refactor into component
 					<a class='group' href={development.url} target='_blank' rel='noopener noreferrer'>
 						<div class='flex justify-between py-1 font-medium'>
 							<div class='max-w-1/2'>
@@ -174,3 +165,14 @@ import Layout from '../layouts/Layout.astro';
 		animationDelay='5s'
 	/>
 </Layout>
+
+<script is:inline>
+	const mainElement = document.querySelector('body');
+	const cookieName = 'isFirstTime';
+
+	if (!document.cookie.includes(cookieName)) {
+		mainElement?.classList.add('reveal');
+
+		document.cookie = `${cookieName}=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+	}
+</script>

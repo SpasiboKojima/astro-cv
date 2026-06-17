@@ -48,7 +48,7 @@ const { style } = Astro.props;
 
 		<slot />
 
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
 <style set:html={fontsStyles}></style>
@@ -72,7 +72,7 @@ const { style } = Astro.props;
 		z-index: -1;
 
 		--adjusted-color: oklch(from var(--background-color) l c h / 0.25);
-		background-image: radial-gradient(var(--adjusted-color, oklch(0.9 0.046 257)), oklch(1 0 0) 75%);
+		/* background-image: radial-gradient(var(--adjusted-color, oklch(0.9 0.046 257)), oklch(0.9702 0 0) 75%); */
 
 		background-size: max(100vw, 100vh) max(100vw, 100vh);
 		background-position: center;

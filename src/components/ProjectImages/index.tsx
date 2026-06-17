@@ -111,7 +111,7 @@ export default function ProjectImages(props: ProjectImagesProps) {
 					{(item, index) => (
 						<ImageZoom
 							aria-label={`Open image ${index() + 1} fullscreen`}
-							class="scale-100 cursor-zoom-in self-center overflow-hidden rounded-xl border border-gray-200 shadow transition-transform duration-300 ease-in-out hover:scale-106 focus:scale-106"
+							class="scale-100 cursor-zoom-in self-center overflow-hidden rounded-xl border border-gray-200 shadow transition-transform duration-300 hover:scale-106 focus:scale-106"
 							onClick={(e, setIsLoading) => onClickHandler(e, setIsLoading, index())}
 							ref={(el) => {
 								imgRefs[index()] = el;

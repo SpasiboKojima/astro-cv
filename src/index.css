@@ -6,6 +6,10 @@
 	default: true;
 	--color-primary: oklch(0.57 0.185 257);
 	--color-primary-content: #fff;
+
+	--surface: var(--white);
+
+	--overlay-shadow: '0 2px 8px 0 rgba(0, 0, 0, 0.02), 0 -6px 12px 0 rgba(0, 0, 0, 0.01), 0 14px 28px 0 rgba(0, 0, 0, 0.03)';
 }
 @plugin "daisyui/theme" {
 	name: 'dark';
@@ -13,12 +17,17 @@
 	--color-primary: oklch(0.57 0.185 257);
 	--color-base-content: oklch(0.94 0 0);
 	--color-info-content: oklch(0.7 0 0);
+
+	--surface: oklch(0.2103 0.0059 285.89);
+
+	--overlay-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
 	--font-geist: 'Geist', Arial;
+	--white: oklch(100% 0 0);
 
 	--animate-fade-in: fade-in 0.3s forwards 0.5s;
 	@keyframes fade-in {
@@ -40,6 +49,19 @@
 			opacity: 1;
 		}
 	}
+
+	/* Strong ease-out for UI interactions */
+	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+	/* Strong ease-in-out for on-screen movement */
+	--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+	/* iOS-like drawer curve (from Ionic Framework) */
+	--ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+	--color-surface: var(--surface);
+
+	--shadow-overlay: var(--overlay-shadow);
 }
 
 @layer components {
@@ -52,4 +74,23 @@
 	.flex-center {
 		@apply flex items-center justify-center;
 	}
+}
+
+@layer utility {
+	/* .link-hover.link-primary {
+		@apply text-inherit;
+
+		&:hover {
+			@media (hover: hover) {
+				@apply text-shadow-primary text-blue-800 no-underline transition-all text-shadow-[1px_0_10px] dark:text-blue-200;
+			}
+		}
+	} */
+	/* .text-highlight {
+		@apply text-shadow-primary text-blue-800 no-underline transition-all text-shadow-[1px_0_10px] dark:text-blue-200;
+	} */
+}
+
+@utility text-highlight {
+	@apply text-shadow-primary text-blue-800 no-underline transition-all text-shadow-[1px_0_10px] dark:text-blue-200;
 }

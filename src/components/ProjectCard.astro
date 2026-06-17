@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '~/data';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*/*.{jpeg,jpg,png,gif,webp}');
+
+const projectImages = Object.keys(images)
+	.filter((imagePath) => project.slug && imagePath.includes(project.slug))
+	.slice(0, 3);
+// .map((imagePath) => images[imagePath]);
+---
+
+<a
+	class='border-base-content z-10 flex aspect-[4/3] flex-col overflow-clip rounded-xl border bg-linear-to-b from-sky-500 to-indigo-500 p-4 text-center text-lg font-medium text-black uppercase transition-transform duration-300 hover:-translate-y-3'
+	href={`/p/${project.slug}`}
+	style={{
+		backgroundImage: 'linear-gradient(in oklab 0deg, var(--project-color), white 150%)',
+		'--project-color': project.color ?? 'oklch(0.68 0.169 237)',
+	}}
+>
+	<h1>
+		<!-- transition:name={`project-title-${project.title}`} -->
+		{project.title}
+	</h1>
+	{/* <div>{project.period}</div> */}
+	<div class='relative -bottom-1/5 mt-auto perspective-midrange'>
+		{
+			projectImages.map((image, index) => (
+				// transition:name={`project-image-${project.slug}-${index}`}
+				<Image
+					src={image}
+					alt='face profile'
+					width={400}
+					height={400}
+					class={`${index === 0 ? '' : 'absolute'} h-40 w-full -rotate-x-45 rounded-lg object-cover object-top`}
+					style={{
+						// top:  0,
+						// top: index * 16 + 'px',
+						top: -index * 32 + 'px',
+
+						// top: index * 64 + 'px',
+						// left: index * 64 + 'px',
+						zIndex: -index,
+
+						boxShadow: '0 8px 24px oklch(0 0 0 / 18%)',
+					}}
+				/>
+			))
+		}
+	</div>
+</a>
