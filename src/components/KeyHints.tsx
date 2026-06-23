@@ -23,9 +23,9 @@ export function KeyHints(props: KeyHintsProps) {
 	createEffect(() => {
 		if (isRender()) {
 			setTimeout(() => {
-				toastRef?.classList.remove('animate-[appear_.6s_forwards]', 'opacity-0');
+				toastRef?.classList.remove('motion-safe:animate-[appear_.6s_forwards]', 'animate-[fade-in_.6s_forwards]', 'opacity-0');
 				void toastRef?.offsetWidth;
-				toastRef?.classList.add('animate-[appear_.6s_forwards_reverse]');
+				toastRef?.classList.add('motion-safe:animate-[appear_.6s_forwards_reverse]', 'animate-[fade-in_.6s_forwards]');
 			}, 15000);
 		}
 	});
@@ -35,17 +35,17 @@ export function KeyHints(props: KeyHintsProps) {
 			<Portal mount={document.body}>
 				<div
 					ref={toastRef}
-					class="toast bottom-16 z-10 hidden animate-[appear_.6s_forwards] opacity-0 lg:block"
+					class="toast bottom-16 z-10 hidden motion-safe:animate-[appear_.6s_var(--ease-out)_forwards] animate-[fade-in_var(--ease-out)_.6s_forwards] opacity-0 lg:block"
 					style={{ 'animation-delay': props.animationDelay ?? '3s' }}
 				>
-					<div class="alert alert-info text-base-content bg-base-100 flex flex-col border border-gray-300 dark:border-gray-700">
+					<div class="alert text-base-content bg-surface flex flex-col shadow-overlay border-none">
 						<For each={props.hints}>
 							{(hint) => (
 								<span class="flex items-center">
 									<Show when={Array.isArray(hint.key)} fallback={<kbd class="kbd">{hint.key as string}</kbd>}>
 										<For each={hint.key as string[]}>{(key) => <kbd class="kbd not-first:ml-2">{key}</kbd>}</For>
 									</Show>
-									<span class="ml-4"> -⠀{hint.description}</span>
+									<span class="ml-4 mb-1"> -⠀{hint.description}</span>
 								</span>
 							)}
 						</For>
