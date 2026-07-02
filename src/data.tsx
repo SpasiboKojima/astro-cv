@@ -189,10 +189,6 @@ export const courses: Course[] = [
 		title: "Udemy - Microfrontends with React: A Complete Developer's Guide",
 		url: 'https://www.udemy.com/certificate/UC-57d1fc52-921a-4476-9892-2c785fdd7741/',
 	},
-	{
-		title: 'Udemy - AWS Serverless APIs & Apps - A Complete Introduction',
-		url: 'https://www.udemy.com/certificate/UC-95dc5377-2bf6-480a-a364-d5eef23e4e23/',
-	},
 ];
 
 export interface Project {
@@ -462,7 +458,7 @@ interface Development {
 export const personalDevelopments: Development[] = [
 	{
 		title: 'Team Up',
-		period: 'Oct 2025 - Jun 2026',
+		period: 'Oct 2025 - Jul 2026',
 		shortDescription: 'A platform for organizing and discovering social events of any kind.',
 		url: 'https://team-up.social/',
 	},
