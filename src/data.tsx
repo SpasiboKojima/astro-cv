@@ -2,7 +2,7 @@ import type { ImageMetadata } from 'astro';
 import CreativeITImg from '~/assets/images/employers/creativeit.jpeg';
 import EPAMImg from '~/assets/images/employers/epam.png';
 import CoherentImg from '~/assets/images/employers/coherent.svg';
-import TargsoftImg from '~/assets/images/employers/targsoft.jpeg';
+// import TargsoftImg from '~/assets/images/employers/targsoft.jpeg';
 import TotleImg from '~/assets/images/employers/totle.png';
 import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
@@ -38,7 +38,7 @@ export const skills = [
 	},
 	{
 		title: 'DevOps tools',
-		skills: ['Docker', 'AWS (EC2, RDS, API Gateway, Lambda, DynamoDB, SQS, CloudFront)'],
+		skills: ['Docker', 'AWS (EC2, RDS, API Gateway, Lambda, DynamoDB, SQS)'],
 	},
 	{
 		title: 'Back-end',
@@ -71,8 +71,8 @@ export const jobs: Job[] = [
 		employeeImg: CoherentImg,
 		employerName: 'Coherent Solutions',
 		period: 'Sep 2025 - Present',
-		description: `- Refactored and updated to new designs a web app and a browser extension for a tax management platform to modern level in all aspects;
-		- Contributed to finishing multiple sprints on time by completing necessary features for a real estate investment platform.`,
+		description: `- Reworked to new API schema and designs a web app and a browser extension. Refactored a big chunk of code to better fit modern standards, be more accessible and reusable for a tax management platform;
+		- Implemented a major feature in the investment process of the platform. Contributed to finishing multiple sprints on time by completing other necessary features for a real estate investment platform.`,
 		shortDescription: '',
 	},
 	{
@@ -123,14 +123,10 @@ Also:
 		employeeImg: TotleImg,
 		employerName: 'Totle',
 		period: 'May 2019 - Jun 2020',
-		description: `Decentralized exchanges aggregator that lets you swap tokens at best prices available.
-
-My accomplishments:
-- Setup a new lightweight front-end app with React + Redux that handled API calls and Web3 wallets interactions;
+		description: `Totle is a decentralized exchanges aggregator that lets you swap tokens at best prices available. It was integrated later as one of the routes for Metamask.
+- Created a new lightweight web app that handled API calls and Web3 wallets interactions;
 - Integrated our back-end service with various wallets (i.e. MyEtherWallet);
-- Created backoffice-related services: a web app to manage back-end data (built with React + Typescript + GraphQL), notifications and logging services (Node.js + Typescript);
-
-Was integrated later as one of the routes for Metamask.`,
+- Created backoffice-related services: a web app to manage back-end data (React, Typescript, GraphQL), notifications and logging services (Node.js, Typescript);`,
 		shortDescription:
 			'Created a new lightweight front-end app with React + Redux. Integrated our back-end service with various wallets. Created backoffice-related services.',
 	},
