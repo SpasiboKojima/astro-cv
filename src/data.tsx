@@ -73,18 +73,17 @@ export const jobs: Job[] = [
 		period: 'Sep 2025 - Present',
 		description: `- Reworked to new API schema and designs a web app and a browser extension. Refactored a big chunk of code to better fit modern standards, be more accessible and reusable for a tax management platform;
 		- Implemented a major feature in the investment process of the platform. Contributed to finishing multiple sprints on time by completing other necessary features for a real estate investment platform.`,
-		shortDescription: '',
+		shortDescription: 'Reworked a web app and browser extension for a tax management platform. Implemented a major feature in the investment process of a real estate investment platform.',
 	},
 	{
 		title: 'Frontend Web Developer',
 		employeeImg: EPAMImg,
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Aug 2025',
-		description: `- Accurately migrated 2 websites with all bugs and issues for a big enterprise client's brands using Next.js;
-- Set a standard on how to setup and use TailwindCSS correctly;
-- Taught 2 Lead developers how to use ESLint.`,
+		description: `- Completed full migration to a new setup of 2 websites for a big enterprise client's brands using Next.js;
+- Set a standard and made a guide on how to more efficiently setup and use some dev tools.`,
 		shortDescription:
-			'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of TailwindCSS and adjacent tools.',
+			'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of dev toolchain.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -455,7 +454,7 @@ export const personalDevelopments: Development[] = [
 	{
 		title: 'Team Up',
 		period: 'Oct 2025 - Jul 2026',
-		shortDescription: 'A platform for organizing and discovering social events of any kind.',
+		shortDescription: 'A platform for organizing and discovering in-person social events.',
 		url: 'https://team-up.social/',
 	},
 	{
