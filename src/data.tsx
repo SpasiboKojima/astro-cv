@@ -8,7 +8,7 @@ import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
 export const position = 'Web & Mobile Developer';
-export const shortDescription = `I am a software engineer with 8 years of commercial experience. Through my career I contributed to more than 15 commercial projects. This includes both those where I was working as a part of a frontend team and the ones I setup and maintained on my own.
+export const shortDescription = `I am a software engineer with 8 years of commercial experience specializing in development using React, React Native, and Next.js. Throughout my career, I contributed to more than 15 commercial projects, both as a part of a frontend team and the ones I setup and maintained myself.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
@@ -71,7 +71,7 @@ export const jobs: Job[] = [
 		employeeImg: CoherentImg,
 		employerName: 'Coherent Solutions',
 		period: 'Sep 2025 - Present',
-		description: `- Reworked to new API schema and designs a web app and a browser extension. Refactored a big chunk of code to better fit modern standards, be more accessible and reusable for a tax management platform;
+		description: `- Refactored a web app and a browser extension to new API schema and mobile-first design. Refactored a big chunk of code to better fit modern standards, be more accessible and reusable for a tax management platform;
 		- Implemented a major feature in the investment process of the platform. Contributed to finishing multiple sprints on time by completing other necessary features for a real estate investment platform.`,
 		shortDescription: 'Reworked a web app and browser extension for a tax management platform. Implemented a major feature in the investment process of a real estate investment platform.',
 	},
@@ -81,7 +81,7 @@ export const jobs: Job[] = [
 		employerName: 'EPAM',
 		period: 'Jan 2025 - Aug 2025',
 		description: `- Completed full migration to a new setup of 2 websites for a big enterprise client's brands using Next.js;
-- Set a standard and made a guide on how to more efficiently setup and use some dev tools.`,
+- Set a standard and made a guide on how to more efficiently set up and use some dev tools.`,
 		shortDescription:
 			'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of dev toolchain.',
 	},
@@ -90,19 +90,20 @@ export const jobs: Job[] = [
 		employeeImg: CreativeITImg,
 		employerName: 'CreativeIT',
 		period: 'Sep 2021 - Nov 2024',
-		description: `Used React and Next.js on a total of 8 projects.
-- Created a small Next.js + Tailwind project with integration of a 3rd party API;
-- Created an MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
-- Refactored, polished, and updated a middle-sized project to noticeably improve performance, UX, and code quality. Added various major features and pages to it;
-- Maintained and implemented a better tech stack for a DEX Trading kit and it's introduction static website, adding new features and improving performance.
-- Created a 3D animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls); Created a separate service to pre-render animation files into .webm videos using Puppeteer;
-- Created a multistep app for purchasing products with lots of customization options for vendors, authentication, internationalization, and multiple payment providers;
-- Created an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
+		description: `- Utilized React and Next.js on 8 projects;
+- Built an MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
+- Refactored, polished, and conducted performance optimization for a middle-sized project, reducing bundle size by 40%, improving UX, and code quality. Added various major features and pages to it;
+- Maintained and implemented a better tech stack for a DEX Trading kit and its introduction static website, adding new features and improving performance;
+- Developed a 3D animation preview component with a focus on UX for multiple input devices;
+- Developed a service to pre-render animation files into .webm videos using Puppeteer;
+- Built a multistep app for purchasing products with lots of customization options for vendors, authentication, internationalization, and multiple payment providers;
+- Built an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
 
 
-Also:
+Additionally:
 - Mentored a less experienced developer to speed up the onboarding process;
-- Conducted a dozen of technical interviews.`,
+- Conducted a dozen of technical interviews;
+- Led calls with clients as a senior technical specialist to provide estimations and explain technical solutions.`,
 		shortDescription:
 			'Created a total of 8 projects with React and Next.js, and contributed to team growth through mentoring and conducting technical interviews.',
 	},
@@ -154,11 +155,11 @@ Also:
 
 export const education: Job[] = [
 	{
-		title: 'Bachelor of Computer Science',
-		employerName: "Bachelor's degree, Informational Systems and Technologies",
+		title: "Bachelor's degree, Informational Systems and Technologies",
+		employerName: "Belarusian State Technological University",
 		period: '2015 - 2019',
 		description:
-			"Gained fundamental knowledge of relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, and information security. Thanks to this, I've had my push towards learning deeply and enjoying this industry.",
+			"Gained fundamental knowledge of relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, and information security.",
 	},
 ];
 
