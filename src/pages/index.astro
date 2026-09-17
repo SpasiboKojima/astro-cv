@@ -18,10 +18,18 @@ import Layout from '../layouts/Layout.astro';
 	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
 		<div class='m-auto max-w-prose'>
 			<div class='mb-6 flex gap-4'>
-				<Image src={PhotoImg} alt='face profile' quality={100} class='size-24 rounded-full object-cover' width={96} height={96} loading='eager' />
+				<Image
+					src={PhotoImg}
+					alt='face profile'
+					quality={100}
+					class='size-24 rounded-full object-cover'
+					width={96}
+					height={96}
+					loading='eager'
+				/>
 				<div class='mt-1 pr-14'>
-					<h1 class='text-4xl font-semibold'>Andrew Katsewich</h1>
-					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-sm text-gray-700'>
+					<h1 class='text-3xl font-semibold'>Andrew Katsewich</h1>
+					<div class='dark:text-neutral-content/80 mt-1 flex justify-between text-base gap-2 text-gray-700'>
 						<div class='flex items-center gap-1'>
 							<HammerIcon class='shrink-0' width={16} height={16} />
 							{position}
@@ -68,9 +76,9 @@ import Layout from '../layouts/Layout.astro';
 				<div class='mb-4 flex flex-wrap gap-1'>
 					{skillsPrimary.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
 				</div>
-				<a class='hover btn btn-primary' href="./Andrew_Katsewich_Resume.pdf" target='_blank' referrerpolicy='no-referrer'>
+				<a class='hover btn btn-primary' href='./Andrew_Katsewich_Resume.pdf' target='_blank' referrerpolicy='no-referrer'>
 					<DownloadIcon width={20} height={20} />
-					Download CV
+					Download Resume
 				</a>
 			</div>
 

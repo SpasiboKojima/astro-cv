@@ -8,13 +8,13 @@ import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
 export const position = 'Web & Mobile Developer';
-export const shortDescription = `I am a software engineer with 8 years of commercial experience specializing in development using React, React Native, and Next.js. Throughout my career, I contributed to more than 15 commercial projects, both as a part of a frontend team and the ones I setup and maintained myself.
+export const shortDescription = `I am a software engineer with 8 years of commercial experience specializing in development using React, React Native, and Next.js. Throughout my career, I contributed to more than 15 commercial projects, both as a part of a team and the ones I led as a solo developer.
 Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const description = `${shortDescription}
 
-In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity. I am comfortable working with existing codebases and enjoy refactoring and optimizing code when there's a need.
+In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity.
 `;
-export const skillsPrimary = ['React', 'Next.js', 'React Native', 'Convex', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'SolidJS'];
+export const skillsPrimary = ['React', 'Next.js', 'React Native', 'Convex', 'SolidJS', 'Astro'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
 export const skills = [
@@ -454,7 +454,7 @@ interface Development {
 export const personalDevelopments: Development[] = [
 	{
 		title: 'Team Up',
-		period: 'Oct 2025 - Jul 2026',
+		period: 'Oct 2025 - Sep 2026',
 		shortDescription: 'A platform for organizing and discovering in-person social events.',
 		url: 'https://team-up.social/',
 	},
