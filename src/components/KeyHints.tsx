@@ -38,14 +38,14 @@ export function KeyHints(props: KeyHintsProps) {
 					class="toast bottom-16 z-10 hidden motion-safe:animate-[appear_.6s_var(--ease-out)_forwards] animate-[fade-in_var(--ease-out)_.6s_forwards] opacity-0 lg:block"
 					style={{ 'animation-delay': props.animationDelay ?? '3s' }}
 				>
-					<div class="alert text-base-content bg-surface flex flex-col shadow-overlay border-none">
+					<div class="alert text-base-content bg-surface shadow-overlay flex flex-col border-none">
 						<For each={props.hints}>
 							{(hint) => (
 								<span class="flex items-center">
 									<Show when={Array.isArray(hint.key)} fallback={<kbd class="kbd">{hint.key as string}</kbd>}>
 										<For each={hint.key as string[]}>{(key) => <kbd class="kbd not-first:ml-2">{key}</kbd>}</For>
 									</Show>
-									<span class="ml-4 mb-1"> -⠀{hint.description}</span>
+									<span class="mb-1 ml-4"> -⠀{hint.description}</span>
 								</span>
 							)}
 						</For>

@@ -134,7 +134,7 @@ export default function ProjectImages(props: ProjectImagesProps) {
 				hints={[{ key: ['←', '→'], description: 'Change zoomed image' }]}
 				isRender={isImageClicked()}
 				storageKey="isImageChanged"
-				animationDelay='3s'
+				animationDelay="3s"
 			/>
 		</>
 	);

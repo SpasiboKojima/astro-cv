@@ -73,7 +73,8 @@ export const jobs: Job[] = [
 		period: 'Sep 2025 - Present',
 		description: `- Refactored a web app and a browser extension to new API schema and mobile-first design. Refactored a big chunk of code to better fit modern standards, be more accessible and reusable for a tax management platform;
 		- Implemented a major feature in the investment process of the platform. Contributed to finishing multiple sprints on time by completing other necessary features for a real estate investment platform.`,
-		shortDescription: 'Reworked a web app and browser extension for a tax management platform. Implemented a major feature in the investment process of a real estate investment platform.',
+		shortDescription:
+			'Reworked a web app and browser extension for a tax management platform. Implemented a major feature in the investment process of a real estate investment platform.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -82,8 +83,7 @@ export const jobs: Job[] = [
 		period: 'Jan 2025 - Aug 2025',
 		description: `- Completed full migration to a new setup of 2 websites for a big enterprise client's brands using Next.js;
 - Set a standard and made a guide on how to more efficiently set up and use some dev tools.`,
-		shortDescription:
-			'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of dev toolchain.',
+		shortDescription: 'Migrated websites for a big enterprise client using Next.js. Set a standard on efficient use of dev toolchain.',
 	},
 	{
 		title: 'Frontend Web Developer',
@@ -107,17 +107,17 @@ Additionally:
 		shortDescription:
 			'Created a total of 8 projects with React and Next.js, and contributed to team growth through mentoring and conducting technical interviews.',
 	},
-// 	{
-// 		title: 'Frontend Web Developer',
-// 		employeeImg: TargsoftImg,
-// 		employerName: 'TargSoft',
-// 		period: 'Jul 2020 - Aug 2021',
-// 		description: ` - Created 2 Canva editing extensions (Javascript);
-// - Refactored and optimized a React frontend for a small startup;
-// - Supported TargControl time tracking platform (Angular 11 & Typescript).`,
-// 		shortDescription:
-// 			'Created 2 Canva editing extensions. Refactored and optimized a React frontend for a small startup. Supported TargControl time tracking platform.',
-// 	},
+	// 	{
+	// 		title: 'Frontend Web Developer',
+	// 		employeeImg: TargsoftImg,
+	// 		employerName: 'TargSoft',
+	// 		period: 'Jul 2020 - Aug 2021',
+	// 		description: ` - Created 2 Canva editing extensions (Javascript);
+	// - Refactored and optimized a React frontend for a small startup;
+	// - Supported TargControl time tracking platform (Angular 11 & Typescript).`,
+	// 		shortDescription:
+	// 			'Created 2 Canva editing extensions. Refactored and optimized a React frontend for a small startup. Supported TargControl time tracking platform.',
+	// 	},
 	{
 		title: 'Frontend Web Developer',
 		employeeImg: TotleImg,
@@ -156,10 +156,10 @@ Additionally:
 export const education: Job[] = [
 	{
 		title: "Bachelor's degree, Informational Systems and Technologies",
-		employerName: "Belarusian State Technological University",
+		employerName: 'Belarusian State Technological University',
 		period: '2015 - 2019',
 		description:
-			"Gained fundamental knowledge of relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, and information security.",
+			'Gained fundamental knowledge of relational databases (Oracle, Microsoft SQL), OOP languages (C++, C#, Java), computer networks, distributed systems, and information security.',
 	},
 ];
 
