@@ -1,32 +1,57 @@
 ---
+import { Image } from 'astro:assets';
+import BuildingIcon from '~/assets/icons/building.svg';
+import LocationIcon from '~/assets/icons/location.svg';
+import PhotoImg from '~/assets/images/photo.jpg';
 import { jobs, location, position } from '~/data';
 import Layout from '~/layouts/Layout.astro';
-import WorkIcon from '~/assets/images/employers/coherent.svg';
-import LocationIcon from '~/assets/icons/location.svg';
-import Building2Icon from '~/assets/icons/building2.svg';
+
+const intro = '8 years building product-focused web and mobile apps.';
 ---
 
 <Layout>
 	<div
-		style={{
-			backgroundImage:
-				'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
-			backgroundSize: '100px 100px',
-		}}
-		class='font-geist flex h-157.5 w-300 flex-col items-center justify-center bg-gray-50 p-16 text-center text-3xl leading-tight tracking-tighter text-gray-900'
+		data-theme='light'
+		class='font-geist bg-base-100 text-base-content relative flex h-157.5 w-300 items-center overflow-hidden px-20 py-18 antialiased'
 	>
-		<WorkIcon width={180} height={180} class='mt-auto' />
-		<div class='mt-8 text-5xl'>Andrew Katsewich</div>
-		<div class='mt-2 mb-auto text-3xl text-gray-700'>{position}</div>
-		<div class='flex w-full items-center justify-between'>
-			<div class='flex items-center gap-1'>
-				<Building2Icon class='shrink-0' width={32} height={32} />
-				{jobs[0].employerName}
+		<div class='flex h-full w-170 flex-col'>
+			<p class='text-base-content/60 text-[22px] font-semibold tracking-[0.12em] uppercase'>Portfolio</p>
+
+			<div class='my-auto'>
+				<h1 class='text-[72px]/none font-semibold tracking-tight'>Andrew Katsewich</h1>
+				<p class='text-base-content/70 mt-4 text-[36px] tracking-tight'>{position}</p>
+				<p class='text-base-content/70 mt-10 text-3xl/snug text-pretty'>{intro}</p>
 			</div>
-			<div class='flex items-center gap-1'>
-				<LocationIcon class='shrink-0' width={32} height={32} />
-				{location}
+
+			<div class='text-base-content/60 flex items-center gap-8 text-[24px]'>
+				<span class='flex items-center gap-2'>
+					<LocationIcon class='size-6 shrink-0' />
+					{location}
+				</span>
+				<span class='flex items-center gap-2'>
+					<BuildingIcon class='size-6 shrink-0' />
+					{jobs[0].employerName}
+				</span>
 			</div>
+		</div>
+
+		<div class='relative ml-auto flex size-75 shrink-0 items-center justify-center'>
+			<div class='glow absolute -inset-40 rounded-full' aria-hidden='true'></div>
+			<Image
+				src={PhotoImg}
+				alt='Andrew Katsewich'
+				quality={100}
+				class='outline-base-100/10 relative size-75 rounded-full object-cover outline-4 -outline-offset-4'
+				width={600}
+				height={600}
+				loading='eager'
+			/>
 		</div>
 	</div>
 </Layout>
+
+<style>
+	.glow {
+		background: radial-gradient(closest-side, oklch(0.57 0.185 257 / 0.35), oklch(0.57 0.185 257 / 0.12) 55%, transparent);
+	}
+</style>

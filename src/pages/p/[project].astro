@@ -31,7 +31,7 @@ const imageOpts = await generateImages(projectImages);
 ---
 
 <Layout style={{ '--background-color': color }}>
-	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
+	<main class='font-geist text-base-content mx-auto bg-transparent px-6 pt-20 pb-24 antialiased sm:pt-6 sm:pb-32'>
 		<a href='/' class='group mb-8 hidden items-center lg:flex' aria-label='Back to Home page'>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform motion-safe:group-hover:-translate-x-1' />
 		</a>
@@ -43,8 +43,8 @@ const imageOpts = await generateImages(projectImages);
 
 			<div class='mb-7'>
 				<p class='mb-4 text-pretty whitespace-pre-line'>{description}</p>
-				<div class='flex flex-wrap gap-1'>
-					{skills.map((item) => <div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{item}</div>)}
+				<div class='flex flex-wrap gap-x-3 gap-y-2'>
+					{skills.map((item) => <div class='badge badge-default badge-lg'>{item}</div>)}
 				</div>
 			</div>
 

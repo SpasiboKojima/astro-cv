@@ -5,15 +5,16 @@ import SolidIcon from '~/assets/icons/stack/solid-light.svg';
 import SolidDarkIcon from '~/assets/icons/stack/solid-dark.svg';
 ---
 
-<footer class='mt-auto w-full p-4 text-right text-sm'>
+<footer class="mt-auto w-full p-4 text-right text-sm opacity-80 sm:p-6">
 	Built with
-	<a href='https://astro.build/' target='_blank' aria-label="Astro website">
-		<AstroIcon class='hidden h-7 w-auto dark:inline' />
-		<AstroDarkIcon class='inline h-7 w-auto dark:hidden' />
+	<a href="https://astro.build/" target="_blank" aria-label="Astro website">
+		<AstroIcon class="hidden h-6 w-auto dark:inline" />
+		<AstroDarkIcon class="inline h-6 w-auto dark:hidden" />
 	</a>
-	+
-	<a href='https://solidjs.com/' target='_blank' aria-label="SolidJS website">
-		<SolidIcon class='hidden h-5 w-auto dark:inline' />
-		<SolidDarkIcon class='inline h-5 w-auto dark:hidden' />
+	and
+	{'  '}
+	<a href="https://solidjs.com/" target="_blank" aria-label="SolidJS website">
+		<SolidIcon class="-mt-0.5 hidden h-4 w-auto dark:inline" />
+		<SolidDarkIcon class="-mt-0.5 inline h-4 w-auto dark:hidden" />
 	</a>
 </footer>

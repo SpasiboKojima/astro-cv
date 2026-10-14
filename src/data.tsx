@@ -8,12 +8,12 @@ import WebsecretImg from '~/assets/images/employers/websecret.jpeg';
 
 export const location = 'Vilnius, Lithuania';
 export const position = 'Web & Mobile Developer';
-export const shortDescription = `I am a software engineer with 8 years of commercial experience specializing in development using React, React Native, and Next.js. Throughout my career, I contributed to more than 15 commercial projects, both as a part of a team and the ones I led as a solo developer.
-Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
-export const description = `${shortDescription}
+export const mainDescription = `With 8 years of commercial experience, I have contributed to more than 15 commercial projects in a diverse range of fields and for various types of clients.
 
-In development I prioritize lightweight, high-performance, and extensible solutions. AI tools like GitHub Copilot are also part of my workflow for enhanced productivity.
+My primary expertise lies in UX and product thinking. I love building things and currently studying UI design while working on 
 `;
+export const shortDescription = `I am a software engineer with 8 years of commercial experience specializing in development using React, React Native, and Next.js. Throughout my career, I contributed to more than 15 commercial projects, both as a part of a team and as a solo developer.
+Experienced in diverse web projects, I deliver effective frontend solutions with a strong focus on product development and the end user.`;
 export const skillsPrimary = ['React', 'Next.js', 'React Native', 'Convex', 'SolidJS', 'Astro'];
 export const languages = ['English (C1)', 'Japanese (N1)', 'Russian (Native)', 'Belarusian (Native)'];
 
@@ -94,7 +94,7 @@ export const jobs: Job[] = [
 - Built an MVP of a blockchain project in a month and used various optimization tools (Next.js’ SSG, Lazy Loading, caching) later during support;
 - Refactored, polished, and conducted performance optimization for a middle-sized project, reducing bundle size by 40%, improving UX, and code quality. Added various major features and pages to it;
 - Maintained and implemented a better tech stack for a DEX Trading kit and its introduction static website, adding new features and improving performance;
-- Developed a 3D animation preview component with a focus on UX for multiple input devices;
+- Built a 3D animation preview component with focus on UX for multiple input devices;
 - Developed a service to pre-render animation files into .webm videos using Puppeteer;
 - Built a multistep app for purchasing products with lots of customization options for vendors, authentication, internationalization, and multiple payment providers;
 - Built an admin panel for a Healthcare project with various forms and settings, a rich-text editor, and a patient upload workflow.
@@ -103,7 +103,7 @@ export const jobs: Job[] = [
 Additionally:
 - Mentored a less experienced developer to speed up the onboarding process;
 - Conducted a dozen of technical interviews;
-- Led calls with clients as a senior technical specialist to provide estimations and explain technical solutions.`,
+- Led calls with clients as a senior technical specialist to propose technical solutions.`,
 		shortDescription:
 			'Created a total of 8 projects with React and Next.js, and contributed to team growth through mentoring and conducting technical interviews.',
 	},
@@ -262,7 +262,7 @@ My accomplishments:
 My accomplishments:
 				- Created animation preview component with UX of controls in mind (mobile touch controls, on-screen controls, mouse + keyboard controls)
 				- Created a separate service to prerender animation files into .webm videos using Puppeteer.`,
-		skills: ['Next.js', 'React', 'Three.js (@react-three/fiber, @react-three/drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
+		skills: ['Next.js', 'React', 'Three.js (Fiber, Drei)', 'Zustand', 'Tailwind CSS', 'Puppeteer'],
 		slug: 'marketplace',
 		color: 'oklch(0.52 0.24 275.78)',
 		url: 'https://mocaptrade.com/',
@@ -420,48 +420,51 @@ My accomplishments:
 	},
 ];
 
-interface Article {
+interface PersonalWork {
 	title: string;
+	type: 'App' | 'Library' | 'Article';
+	year: number;
 	url: string;
+	shortDescription?: string;
 }
 
-export const articles: Article[] = [
+export const personalWork: PersonalWork[] = [
+	{
+		title: 'Team Up',
+		type: 'App',
+		year: 2026,
+		shortDescription: 'A platform for discovering and organizing in-person social activities.',
+		url: 'https://team-up.social/',
+	},
 	{
 		title: 'Lessons from building a social events platform - Team Up | Expo & Convex',
+		type: 'Article',
+		year: 2026,
 		url: 'https://dev.to/thanksboss/lessons-from-building-a-social-events-platform-team-up-expo-convex-4228',
 	},
 	{
+		title: 'Medium Zoom Next',
+		type: 'Library',
+		year: 2025,
+		shortDescription: 'A modernized version of the JavaScript library for zooming images like in Medium',
+		url: 'https://github.com/SpasiboKojima/medium-zoom-next',
+	},
+	{
 		title: '7 Easy UX Improvements for your Webapp',
+		type: 'Article',
+		year: 2025,
 		url: 'https://dev.to/thanksboss/7-easy-ux-improvements-for-your-webapp-4mia',
 	},
 	{
 		title: 'Anticipating User Errors in Web',
+		type: 'Article',
+		year: 2025,
 		url: 'https://dev.to/thanksboss/anticipating-user-errors-in-web-3nbc',
 	},
 	{
 		title: 'Fixing Target Size or A Fat Finger Problem',
+		type: 'Article',
+		year: 2024,
 		url: 'https://dev.to/thanksboss/fixing-target-area-or-a-fat-finger-problem-1fe8',
-	},
-];
-
-interface Development {
-	title: string;
-	period: string;
-	shortDescription: string;
-	url: string;
-}
-
-export const personalDevelopments: Development[] = [
-	{
-		title: 'Team Up',
-		period: 'Oct 2025 - Sep 2026',
-		shortDescription: 'A platform for organizing and discovering in-person social events.',
-		url: 'https://team-up.social/',
-	},
-	{
-		title: 'Medium Zoom Next',
-		period: 'Aug 2025 - Sep 2025',
-		shortDescription: 'A modernized version of the JavaScript library for zooming images like in Medium',
-		url: 'https://github.com/SpasiboKojima/medium-zoom-next',
 	},
 ];

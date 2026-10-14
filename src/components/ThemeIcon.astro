@@ -5,26 +5,17 @@
 <button
 	aria-label='Toggle theme'
 	id='themeToggle'
-	class='swap absolute top-8 right-4 z-20 -mt-4 origin-top-right p-4 transition-transform motion-safe:hover:scale-150 lg:fixed lg:top-0 lg:right-0 lg:-mt-8 lg:p-8'
+	class='btn btn-ghost btn-circle absolute top-4 right-4 z-20 size-11 lg:fixed lg:top-6 lg:right-6'
 >
-	<div class='sun size-5 border-7 border-white bg-black'></div>
-
-	<div class='moon size-5 border-7 border-black bg-white'></div>
+	<svg viewBox='0 0 24 24' class='theme-icon size-5 duration-300 ease-out motion-safe:transition-transform' aria-hidden='true'>
+		<circle cx='12' cy='12' r='9' fill='none' stroke='currentColor' stroke-width='1.5'></circle>
+		<path d='M12 3a9 9 0 0 1 0 18z' fill='currentColor'></path>
+	</svg>
 </button>
 
 <style>
-	.sun {
-		opacity: 0%;
-	}
-	.moon {
-		opacity: 100%;
-	}
-
-	:global([data-theme='dark']) .sun {
-		opacity: 100%;
-	}
-	:global([data-theme='dark']) .moon {
-		opacity: 0%;
+	:global([data-theme='dark']) .theme-icon {
+		rotate: 180deg;
 	}
 </style>
 

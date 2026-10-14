@@ -45,7 +45,7 @@ export function KeyHints(props: KeyHintsProps) {
 									<Show when={Array.isArray(hint.key)} fallback={<kbd class="kbd">{hint.key as string}</kbd>}>
 										<For each={hint.key as string[]}>{(key) => <kbd class="kbd not-first:ml-2">{key}</kbd>}</For>
 									</Show>
-									<span class="mb-1 ml-4"> -⠀{hint.description}</span>
+									<span class="mb-1 ml-4 text-sm font-medium">{hint.description}</span>
 								</span>
 							)}
 						</For>

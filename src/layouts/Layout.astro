@@ -16,10 +16,10 @@ const { style } = Astro.props;
 <!doctype html>
 <html lang='en'>
 	<head>
-		<title>Andrew Katsewich's CV</title>
-		<meta property='title' content="Andrew Katsewich's CV" />
+		<title>Andrew Katsewich</title>
+		<meta property='title' content='Andrew Katsewich' />
 		<meta name='description' content={`Andrew Katsewich, ${position} in ${location}, @${jobs[0].employerName}`} />
-		<meta property='og:title' content="Andrew Katsewich's CV" />
+		<meta property='og:title' content='Andrew Katsewich' />
 		<meta property='og:type' content='website' />
 		<meta property='og:site_name' content='Vercel' />
 		<meta property='og:image' content='/og.png' />
@@ -33,9 +33,13 @@ const { style } = Astro.props;
 
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover' />
-		<link rel='apple-touch-icon' href='/logo.png' />
 		<link rel='manifest' href='/manifest.json' />
+
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+		<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+		<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+
 		<meta name='generator' content={Astro.generator} />
 
 		<meta name='theme-color' content='oklch(20% 0.105 251.19 / 0.5)' />
@@ -72,7 +76,7 @@ const { style } = Astro.props;
 		z-index: -1;
 
 		--adjusted-color: oklch(from var(--background-color) l c h / 0.25);
-		background-image: radial-gradient(var(--adjusted-color, oklch(0.9 0.046 257)), oklch(1 0 0) 75%);
+		background-image: radial-gradient(var(--adjusted-color, oklch(0.9 0.046 257)), oklch(0.9702 0 0) 75%);
 
 		background-size: max(100vw, 100vh) max(100vw, 100vh);
 		background-position: center;

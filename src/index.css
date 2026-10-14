@@ -4,6 +4,10 @@
 @plugin "daisyui/theme" {
 	name: 'light';
 	default: true;
+
+	--radius-selector: 1rem;
+	--radius-box: 1.5rem;
+
 	--color-primary: oklch(0.57 0.185 257);
 	--color-primary-content: #fff;
 
@@ -14,6 +18,10 @@
 @plugin "daisyui/theme" {
 	name: 'dark';
 	/* prefersdark: true; */
+
+	--radius-selector: 1rem;
+	--radius-box: 1.5rem;
+
 	--color-primary: oklch(0.57 0.185 257);
 	--color-base-content: oklch(0.94 0 0);
 	--color-info-content: oklch(0.7 0 0);
@@ -60,7 +68,7 @@
 
 @layer components {
 	.h1 {
-		@apply text-2xl font-semibold tracking-tight;
+		@apply text-2xl font-semibold tracking-[-0.3px];
 	}
 	.h2 {
 		@apply text-lg font-semibold tracking-tight;
@@ -68,4 +76,18 @@
 	.flex-center {
 		@apply flex items-center justify-center;
 	}
+}
+
+@utility btn {
+	@apply rounded-3xl font-medium;
+}
+
+@utility badge {
+	@apply font-medium;
+}
+@utility badge-default {
+	@apply bg-base-content/10 border-0;
+}
+@utility badge-lg {
+	@apply px-3 text-sm;
 }

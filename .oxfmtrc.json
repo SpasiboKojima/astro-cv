@@ -8,5 +8,6 @@
 	"tabWidth": 2,
 	"sortPackageJson": false,
 	"sortTailwindcss": {},
-	"ignorePatterns": []
+	"ignorePatterns": [],
+	"astro": true,
 }

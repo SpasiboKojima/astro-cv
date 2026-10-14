@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<main class='font-geist text-base-content mx-auto bg-transparent p-4'>
+	<main class='font-geist text-base-content mx-auto bg-transparent px-6 pt-20 pb-24 antialiased sm:pt-6 sm:pb-32'>
 		<a href='/' class='group mb-8 hidden items-center lg:flex' aria-label='Back to Home page'>
 			<ArrowMoveLeftIcon class='stroke-base-content size-10 transition-transform motion-safe:group-hover:-translate-x-1' />
 		</a>
@@ -19,8 +19,9 @@ import Layout from '../layouts/Layout.astro';
 
 			<div class=''>
 				<table class='table-pin-rows table'>
-					<thead class='sticky top-0 z-10 backdrop-blur-md'>
-						<tr class='bg-transparent'>
+					<thead class='backdrop-blur-md'>
+						<!-- <thead class='sticky top-0 z-10 backdrop-blur-md'> -->
+						<tr class='relative bg-transparent'>
 							<th>Year</th>
 							<th>Project</th>
 							<th class='hidden md:table-cell'>Made at</th>
@@ -46,17 +47,17 @@ import Layout from '../layouts/Layout.astro';
 										) : (
 											project.title
 										)}
-										<div class='mt-2 flex flex-wrap gap-1 sm:hidden'>
+										<div class='mt-2 flex flex-wrap gap-2 sm:hidden'>
 											{project.skills.map((skill) => (
-												<div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{skill}</div>
+												<div class='badge badge-default badge-lg'>{skill}</div>
 											))}
 										</div>
 									</td>
 									<td class='hidden md:table-cell'>{project.employerName}</td>
 									<td class='hidden sm:table-cell'>
-										<div class='flex flex-wrap gap-1'>
+										<div class='flex flex-wrap gap-2'>
 											{project.skills.map((skill) => (
-												<div class='text-base-content rounded-sm border px-2 py-1 text-xs font-medium'>{skill}</div>
+												<div class='badge badge-default badge-lg'>{skill}</div>
 											))}
 										</div>
 									</td>
